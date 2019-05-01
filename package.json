@@ -1,7 +1,7 @@
 {
   "name": "wp",
   "version": "1.0.0",
-  "description": "Calendar Project",
+  "description": "Laki Menu",
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,13 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BenedyktT/KitchenCalendarApp.git"
+    "url": "git+https://github.com/BenedyktT/LakiMenu.git"
   },
   "keywords": [],
   "author": "Benedykt",
   "license": "ISC",
   "bugs": {},
-  "homepage": "git remote add origin https://github.com/BenedyktT/KitchenCalendarApp#readme",
+  "homepage": "git remote add origin https://github.com/BenedyktT/LakiMenu#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

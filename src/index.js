@@ -1,4 +1,9 @@
 import style from "./styles/main.css";
 import './styles/appStyles.scss';
-console.log(`hello world`)
-console.log(`another line supossed to be on 3s`)
+
+
+
+let hamburger = document.querySelector('.hamburger-container')
+hamburger.addEventListener('click', ()=>{
+    hamburger.classList.toggle('active')
+})
