@@ -19,7 +19,7 @@ module.exports = {
         use: [
           {
             loader: "html-loader",
-            options: { minimize: false }
+            options: { minimize: true }
           }
         ]
       },
@@ -64,7 +64,7 @@ module.exports = {
         to: path.resolve(__dirname, 'dist')
       }]),
     new ImageminPlugin({
-        pngquant: ({quality: [0.5, 0.5]}),
+        pngquant: {quality: '50-50'},
         plugins: [imageminMozjpeg({quality: 50})]
       })
   ]

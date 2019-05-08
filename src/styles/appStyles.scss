@@ -1,42 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Metrophobic|Sacramento');
 @import 'themeColors';
+$font-head:  'Sacramento', cursive;
+$font-sub: 'Metrophobic', sans-serif;
 $theme-font:    verdana, sans-serif;
-
+$theme-color: rgb(209, 154, 45);
+$cta-fontsize: 1.5rem;
+$padding: 1rem;
+$bg-color: rgb(44, 42, 42);
+html,body{margin:0;height: 100%;box-sizing: border-box;}
 body {
   font: $theme-font;
-  background-color: rgb(44, 42, 42);
+  background-color: $bg-color;
   h1, h2 {
-      color: $themeColor-Dark
+      font-family:$font-head
+  }
+  p,article {font-family:$font-sub}
+}
+.btn{
+  
+  width: 10rem;
+  background: inherit;
+  border:1px solid white;
+  cursor: pointer;
+  font-family: $font-sub;
+  color: white;
+  border-radius: 3px;
+  display:block;
+  padding:0.6rem;
+  transition: background-color 350ms;
+  /* justify-self: flex-end; */
+  align-self:center
+}
+.btn:hover,.btn:active{background-color: $theme-color;}
+
+header{
+  height: 100vh;
+  .header-bg{
+   
+    background-image: linear-gradient(transparent, $bg-color), url('../images/zastawa.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+    
   }
 }
-
-
 nav {
+  
+  position:relative;
   display:flex;
   justify-content: space-between;
   align-content: center;
-  padding:1rem;
+  padding:3rem 1rem;
   .brand img{
-    width:150px;
-    min-width:100px
+    width:250px;
+    min-width:250px;
+    cursor:pointer
   }
   .sociallinks{
+    padding:0;
     display:flex;
     li{list-style: none; margin: 0 1rem;
-    svg{width:30px;height:30px; fill:white}}
+    svg{width:30px;height:30px; fill:white;transition: fill 350ms}}
+    svg:hover{fill:$theme-color}
   }
+  .items-right{display:flex;}
   .hamburger-container{
     margin:auto 0;
-    height: 50px;
-    width: 50px;
-    position: relative;
+    height: 100%;
+    display:flex;
+
     .hamburger {
       width: 50px;
       height: 2px;
       background: #FCFCFC;
-      position: absolute;
-      top:50%;
       box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
       margin:auto 0;
+      transition:0.5s;
+      position:relative;
+      
     }
   }
  
@@ -65,11 +108,119 @@ nav {
   }
   .hamburger-container.active .hamburger::before{
     top:0;
-    transform: rotate(145deg)
+    transform: rotate(140deg)
   }
   .hamburger-container.active .hamburger::after{
     top:0;
-    transform: rotate(220deg)
+    transform: rotate(40deg)
     
   }
+  .cta{margin: 0 2rem;
+  };
+  
 }
+
+.arrow{
+  cursor: pointer;
+  position:absolute;
+  width: 100%;
+  text-align: center;
+  margin:auto;
+  bottom:0;
+  *{width:50px;height:50px;z-index:1; fill: white; margin:auto}
+}
+
+main{
+  .about{
+    margin:6rem 0;
+    height: 100%;
+    overflow: hidden;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    /* height: 100%;
+    min-height:100%;
+    width: 100%; */
+    .about__bg{
+      background: linear-gradient($bg-color 60%, transparent);
+      background-attachment: scroll;
+      background-position: top 50%;
+      background-size: cover;
+      height: 100%;
+      width:100%;
+      position:absolute;
+      z-index:-1
+    }
+    .about__chef{
+      .about__chef-container{width:350px}
+      text-align: center; 
+      img{width:100%;height:100%;filter:brightness(0.6)}
+    }
+    .about__art{flex-basis: 30%; align-self: center}
+  }
+  .section, .location{
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    .location__bg{
+      height: 100%;
+      max-height: 100%;
+      width: 100%;
+      background: linear-gradient($bg-color, rgba(44, 42, 42, 0.616)) , url(../images/kurczak.jpg);
+      background-position: center;
+      background-size: 100%;
+      background-attachment: fixed;
+      position: absolute;
+      z-index:-1;
+     
+     
+    }
+    .section__headline{
+      margin-bottom: 2rem;
+    }
+    .section__btn{
+      
+    }
+  }
+  .section.menu{
+    display:flex;
+    overflow: hidden;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    .menu__bg{
+      background-color: $bg-color;
+    }
+    .menu__text{flex-basis: 40%; .btn{display:inline-block}}
+    .menu__img{
+      height: 40%;
+      flex-basis: 40%;
+      background: url(../images/menu.jpg);
+      background-size:100%;
+      
+    }
+     
+  }
+  .bar{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    #bar__bg{background: linear-gradient($bg-color, rgba(44, 42, 42, 0.616)) , url(../images/bar.jpg);background-size: 100%;background-position: center;}
+    .bar__text{flex-basis: 30%; .btn{display:inline-block}}
+    .bar__article{flex-basis: 30%}
+  }
+}
+.bg--overlay{
+  position:absolute;
+  height:100%;
+  width:100%;
+  background: linear-gradient($bg-color, transparent 70%, $bg-color,);
+  z-index:1;
+  overflow: hidden;
+}
+
