@@ -61,6 +61,7 @@ module.exports = {
         chunkFilename: "[id].css"
       }),
       /* new CopyWebpackPlugin([{
+       new CopyWebpackPlugin([{
         from: 'src/images/',
         to: path.resolve(__dirname, 'dist')
       }]), */
