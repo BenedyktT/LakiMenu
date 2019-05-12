@@ -67,6 +67,7 @@ nav {
   .sociallinks{
     padding:0;
     display:flex;
+    li:nth-child(2){order: 2;};
     li{list-style: none; margin: 0 1rem;
     svg{width:30px;height:30px; fill:white;transition: fill 350ms}}
     svg:hover{fill:$theme-color}
@@ -121,6 +122,7 @@ nav {
     transform: rotate(40deg)
     
   }
+  #toggle-nav__checkbox{position: absolute;display:none}
   .cta{margin: 0 2rem;
   };
   
@@ -153,7 +155,7 @@ main{
     width: 100%; */
     .about__bg{
       background: linear-gradient($bg-color 60%, transparent);
-      background-attachment: scroll;
+      
       background-position: top 50%;
       background-size: cover;
       height: 100%;
@@ -167,7 +169,7 @@ main{
       img{width:100%;height:100%;filter:brightness(0.6)}
     }
     .about__art{flex-basis: 30%; align-self: center;
-    border: 1px solid $theme-color;padding:1rem;border-radius: 3px;box-shadow: 2px 2px 10px darken($bg-color,30%);padding:2rem;
+    border-radius: 3px;box-shadow: 2px 2px 10px darken($bg-color,30%);padding:2rem;
     }
   }
   .section, .location{
@@ -226,7 +228,9 @@ main{
       .glide__slide{transition:filter 1550ms ease;filter:brightness(0.6) grayscale(80%);height:500px;width:500px;overflow:hidden;z-index:1}
       .glide__slide:hover {filter:none;};
       img{overflow:hidden;object-fit: cover !important;min-height:100%;width:100%}
-      .slide__overlay{height:100%;width:100%;}
+      .slide__overlay{height:100%;width:100%;
+      .btn__staff{position:absolute;top:50%;left:calc(50% - 5rem);display:none}}
+      .glide__bullet {filter: opacity(0.2) !important}
       
     }
     
@@ -252,6 +256,12 @@ main{
 
 footer{
   height: 50vh;
-  overflow: hidden
+  overflow: hidden;
+  .links{
+    list-style: none;display:flex;flex-direction: row;z-index:100;align-content:center;height:100%;justify-content: center;
+    .link{align-self: center}
+    .link img{width:120px;height: auto};
+    .link:nth-child(2) img {width:300px};
+  }
 }
 

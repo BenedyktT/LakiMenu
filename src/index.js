@@ -43,11 +43,13 @@ carousel.mount()
 
 const slide = document.querySelectorAll('glide__slide img')
 slide.forEach((e)=>e.style.opacity=0)
-
+const checkBox = document.querySelector('#toggle-nav__checkbox')
 let hamburger = document.querySelector('.hamburger-container')
 hamburger.addEventListener('click', ()=>{
-    hamburger.classList.toggle('active')
+    if(checkBox.checked){hamburger.classList.add('active')} else {
+        hamburger.classList.remove('active')
+    }
 })
 
 
-/* AIzaSyCHmYcdsvYkzup1JerBJ4Jopz_jV9flKV0 */
+
