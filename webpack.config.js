@@ -1,9 +1,10 @@
 const path = require('path');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+/* const CopyWebpackPlugin = require('copy-webpack-plugin'); */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const imageminWebp = require('imagemin-webp');
 module.exports = {
   module: {
     rules: [
@@ -59,13 +60,15 @@ module.exports = {
         filename: "[name].css",
         chunkFilename: "[id].css"
       }),
-      new CopyWebpackPlugin([{
+      /* new CopyWebpackPlugin([{
         from: 'src/images/',
         to: path.resolve(__dirname, 'dist')
-      }]),
+      }]), */
     new ImageminPlugin({
         pngquant: {quality: '50-50'},
-        plugins: [imageminMozjpeg({quality: 50})]
+        plugins: [
+          imageminMozjpeg({quality: 50}),
+          imageminWebp({autoFilter:true,resize:{width:1024,height:0}})]
       })
   ]
 };
