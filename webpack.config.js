@@ -6,6 +6,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminWebp = require('imagemin-webp');
 module.exports = {
+  entry: {
+    index: './src/index.js',
+    main: './src/main.js',
+    about: './src/about.js', 
+},
+  devtool: 'source-map',
   module: {
     rules: [
        {
@@ -54,7 +60,13 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",
-      filename: "./index.html"
+      filename: "./index.html",
+      chunks: ['index', 'main']
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/about.html",
+      filename: "./about.html",
+      chunks: ['index','about']
     }),
     new MiniCssExtractPlugin({
         filename: "[name].css",

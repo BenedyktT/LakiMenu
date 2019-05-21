@@ -2,13 +2,8 @@
  @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme"; 
 @import url('https://fonts.googleapis.com/css?family=Metrophobic|Sacramento');
 @import 'themeColors';
-$font-head:  'Sacramento', cursive;
-$font-sub: 'Metrophobic', sans-serif;
-$theme-font:    verdana, sans-serif;
-$theme-color: rgb(209, 154, 45);
-$cta-fontsize: 1.5rem;
-$padding: 1rem;
-$bg-color: rgb(44, 42, 42);
+@import 'global';
+
 html,body{margin:0;height: 100%;box-sizing: border-box;}
 body {
   font: $theme-font;

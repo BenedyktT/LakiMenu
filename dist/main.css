@@ -13,6 +13,17 @@ img {
     width:500px;
     
 }
+.about__subpage {
+  width: 30rem;
+  margin: auto;
+  text-align: center;
+  padding: 3rem 0; }
+  .about__subpage h1 {
+    font-size: 3rem; }
+  .about__subpage .text__address {
+    margin: 2rem;
+    color: #d19a2d; }
+
 .glide {
   position: relative;
   width: 100%;
@@ -406,3 +417,5 @@ footer {
     footer .links .link:nth-child(2) img {
       width: 300px; }
 
+
+/*# sourceMappingURL=main.css.map*/
