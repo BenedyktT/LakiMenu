@@ -35,7 +35,7 @@ body {
 .btn:hover,.btn:active{background-color: $theme-color;}
 
 header{
-  height: 100vh;
+  height: 100%;
   .header-bg{
    
     background-image: linear-gradient(transparent, $bg-color), url('../images/zastawa.jpg');
@@ -250,7 +250,6 @@ main{
 }
 
 footer{
-  height: 50vh;
   overflow: hidden;
   .links{
     list-style: none;display:flex;flex-direction: row;z-index:100;align-content:center;height:100%;justify-content: center;

@@ -1,6 +1,8 @@
 import style from "./styles/main.css";
 import './styles/about.scss'
 import './styles/appStyles.scss';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const checkBox = document.querySelector('#toggle-nav__checkbox')
 let hamburger = document.querySelector('.hamburger-container')
@@ -16,4 +18,11 @@ if(!window.location.href.includes('/about.html')){
 }
 let brandAnchor = document.querySelector('.brand')
 brandAnchor.addEventListener('click', ()=>{window.location.assign('/')})
+AOS.init({
+    startEvent: 'DOMContentLoaded',
+    delay:300,
+    duration:1350,
+})
 
+
+console.log(process.env.DB_HOST);

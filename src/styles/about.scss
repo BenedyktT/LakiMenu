@@ -1,13 +1,24 @@
 @import 'global';
-
+.about__header{height:200px};
 .about__subpage {
-    width:30rem;
+    
+    
+    article{
+        margin:3rem 0;
+        width:30rem;
     margin:auto;
     text-align: center;
     padding:3rem 0;
+    };
     h1{font-size: 3rem};
     .text__address{
         margin:2rem;
         color:$theme-color;
     };
+
+    #map {
+        height: 450px;
+        width:75%;  
+        margin:auto
+    }
 }

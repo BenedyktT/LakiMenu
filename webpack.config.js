@@ -5,6 +5,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminWebp = require('imagemin-webp');
+const Dotenv = require('dotenv-webpack');
 module.exports = {
   entry: {
     index: './src/index.js',
@@ -58,6 +59,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
