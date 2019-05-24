@@ -1,0 +1,17 @@
+@import 'global';
+.toggle-nav{
+    width:50%;height:100%;position:fixed;top:0;background:darken($bg-color,20%);z-index:100;margin:0;right:0;
+    transform: translateX(100%);
+    .toggle-nav__elements{
+        li{
+            list-style: none;
+            font-size: 1rem;
+            color:white;
+        }
+    }
+}
+
+.toggle-nav__active {
+    transform:translateX(0)
+}
+

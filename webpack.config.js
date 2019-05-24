@@ -5,7 +5,14 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminWebp = require('imagemin-webp');
+const Dotenv = require('dotenv-webpack');
 module.exports = {
+  entry: {
+    index: './src/index.js',
+    main: './src/main.js',
+    about: './src/about.js', 
+},
+  devtool: 'source-map',
   module: {
     rules: [
        {
@@ -52,9 +59,26 @@ module.exports = {
     ]
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
-      filename: "./index.html"
+      filename: "./index.html",
+      chunks: ['index', 'main']
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/about.html",
+      filename: "./about.html",
+      chunks: ['index','about']
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/menu.html",
+      filename: "./menu.html",
+      chunks: ['index']
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/cocktails.html",
+      filename: "./cocktails.html",
+      chunks: ['index']
     }),
     new MiniCssExtractPlugin({
         filename: "[name].css",

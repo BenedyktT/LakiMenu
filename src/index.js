@@ -1,55 +1,48 @@
 import style from "./styles/main.css";
+import './styles/about.scss'
 import './styles/appStyles.scss';
-import Glide from '@glidejs/glide'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-let carousel = new Glide('.glide',{
-    type:"carousel",
-    hoverpause: true,
-    gap: 10,
-    startAt:0,
-    perView:3,
-    autoplay:4000,
-    animationDuration: 1500,
-    peek: {
-        before: 50,
-        after: 100
-      },
-    breakpoints: {
-    1630: {
-        peek:{
-            before:0,
-            after:0
-        }
-    },
-    1024: {
-        perView: 2
-        
-    },
-    600: {
-        perView: 1,
-        peek: {
-            before:0,
-            after:0
-        }
-    },
-    
-    },
-    
-})
-/* glide.on('mount.after', function () {
-    // Logic fired after mounting
-  }) */
-carousel.mount()
-
-const slide = document.querySelectorAll('glide__slide img')
-slide.forEach((e)=>e.style.opacity=0)
 const checkBox = document.querySelector('#toggle-nav__checkbox')
+const toggleNav = document.querySelector('.toggle-nav')
+const toggleNavEl = document.querySelector('.toggle-nav__elements')
 let hamburger = document.querySelector('.hamburger-container')
 hamburger.addEventListener('click', ()=>{
     if(checkBox.checked){hamburger.classList.add('active')} else {
         hamburger.classList.remove('active')
     }
 })
+    checkBox.addEventListener('click',()=>{
+        toggleNav.classList.add('toggle-nav__active')
+        
+        
+    })
+    if(toggleNav.classList.includes)
+    body.addEventListener('click',()=>{toggleNav.classList.toggle('toggle-nav_active')})
+let locationBtn = document.querySelector(`.location__btn`)
+let menuBtn = document.querySelector('.menu__btn')
+let cocktailBtn = document.querySelector('.cocktails__btn')
+if(!window.location.href.includes('/about.html')){
+    locationBtn.addEventListener(`click`, ()=>{window.location.href=`/about.html`})
+}
+let brandAnchor = document.querySelector('.brand')
+brandAnchor.addEventListener('click', ()=>{window.location.assign('/')})
+AOS.init({
+    startEvent: 'DOMContentLoaded',
+    delay:300,
+    duration:1350,
+})
+
+/* let locationAssignCreator = (buttonName, locationAddress) => {
+    if(!window.location.href.includes(`${locationAddress}.html`)){
+        buttonName.addEventListener('click',()=>{
+            window.location.href=`/${locationAddress}.html`
+        })
+    }
+}
 
 
-
+ locationAssignCreator(menuBtn,'menu') 
+ locationAssignCreator(cocktailBtn,'cocktails')  */
+console.log(process.env.DB_HOST);
