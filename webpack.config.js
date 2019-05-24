@@ -70,6 +70,16 @@ module.exports = {
       filename: "./about.html",
       chunks: ['index','about']
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/menu.html",
+      filename: "./menu.html",
+      chunks: ['index']
+    }),
+    new HtmlWebPackPlugin({
+      template: "./src/cocktails.html",
+      filename: "./cocktails.html",
+      chunks: ['index']
+    }),
     new MiniCssExtractPlugin({
         filename: "[name].css",
         chunkFilename: "[id].css"
