@@ -12,7 +12,9 @@ module.exports = {
     main: './src/main.js',
     about: './src/about.js', 
 },
-  devtool: 'source-map',
+output: {
+  filename: '[chunkhash].bundle.js'
+},
   module: {
     rules: [
        {
