@@ -54,13 +54,15 @@ nav {
   display:flex;
   justify-content: space-between;
   align-content: center;
-  padding:3rem 1rem;
+  padding:1rem 1rem;
+  .brand {z-index:100;}
   .brand img{
     width:250px;
     min-width:250px;
+    z-index:110;
     cursor:pointer
   }
-  .sociallinks{
+  .sociallinks,.toggle-nav__social-links{
     padding:0;
     display:flex;
     li:nth-child(2){order: 2;};
@@ -75,13 +77,14 @@ nav {
     display:flex;
 
     .hamburger {
-      width: 50px;
+      width: 30px;
       height: 2px;
       background: #FCFCFC;
       box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
       margin:auto 0;
       transition:0.5s;
       position:relative;
+      z-index:50;
       
     }
   }
@@ -90,7 +93,7 @@ nav {
   .hamburger:after {
     content: '';
     position:absolute;
-    width: 50px;
+    width: 30px;
     height: 2px;
     background:#FCFCFC;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -99,12 +102,13 @@ nav {
 
   
   .hamburger:before {
-    top: -16px;
+    top: -8px;
   }
   
   .hamburger:after {
-    top: 16px;
+    top: 8px;
   }
+  label {z-index:150}
   .hamburger-container.active .hamburger{
     background: rgba(0, 0, 0, 0);
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0)
@@ -118,7 +122,7 @@ nav {
     transform: rotate(40deg)
     
   }
-  #toggle-nav__checkbox{position: absolute;display:none}
+  #nav__checkbox{display:none}
   .cta{margin: 0 2rem;
   };
   
@@ -162,10 +166,10 @@ main{
     .about__chef{
       .about__chef-container{width:350px}
       text-align: center; 
-      img{width:100%;height:100%;filter:brightness(0.6)}
+      img{width:100%;height:100%;filter:brightness(0.6) grayscale(0.8)}
     }
     .about__art{flex-basis: 30%; align-self: center;
-    border-radius: 3px;box-shadow: 2px 2px 10px darken($bg-color,30%);padding:2rem;
+    border-radius: 3px;padding:2rem;
     }
   }
   .section, .location{

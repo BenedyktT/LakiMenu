@@ -3,23 +3,23 @@ import './styles/appStyles.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const checkBox = document.querySelector('#toggle-nav__checkbox')
-const toggleNav = document.querySelector('.toggle-nav')
-const toggleNavEl = document.querySelector('.toggle-nav__elements')
-let hamburger = document.querySelector('.hamburger-container')
-hamburger.addEventListener('click', ()=>{
-    if(checkBox.checked){hamburger.classList.add('active')} else {
-        hamburger.classList.remove('active')
-    }
-})
-    checkBox.addEventListener('click',()=>{
-        toggleNav.classList.add('toggle-nav__active')
-        
-        
-    })
-    if(toggleNav.classList.includes)
-    body.addEventListener('click',()=>{toggleNav.classList.toggle('toggle-nav_active')})
 
+//toggle nav
+
+
+const checkbox = document.querySelector('#nav__checkbox')
+const hamburger = document.querySelector('.hamburger-container')
+
+
+checkbox.addEventListener('change', ()=>{
+    hamburger.classList.toggle('active')
+    document.querySelector('.toggle-nav').classList.toggle('toggle-nav__active')
+})
+
+
+
+
+//redirect to homepage on clicking logo
 let brandAnchor = document.querySelector('.brand')
 brandAnchor.addEventListener('click', ()=>{window.location.assign('/')})
 AOS.init({
@@ -27,4 +27,8 @@ AOS.init({
     delay:300,
     duration:1350,
 })
-
+const aboutSection = document.querySelector('.about__chef')
+const arrow = document.querySelector('.arrow')
+arrow.addEventListener('click',()=>{
+    aboutSection.scrollIntoView({behavior:'smooth'})
+})

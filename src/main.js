@@ -5,12 +5,12 @@ import './styles/appStyles.scss';
 
 let carousel = new Glide('.glide',{
     type:"carousel",
-    hoverpause: true,
+    hoverpause: false,
     gap: 10,
     startAt:0,
     perView:3,
-    autoplay:4000,
-    animationDuration: 1500,
+    autoplay:2000,
+    animationDuration: 1350,
     peek: {
         before: 50,
         after: 100

@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
   Map.loadGoogleMapsApi().then(function(googleMaps) {
     Map.createMap(googleMaps, mapElement);
     Map.createMarker(Map.createMap(googleMaps,mapElement))
+    
   });
  
-
+  
 });
 
       
