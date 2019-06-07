@@ -5,9 +5,9 @@
 @import 'global';
 @import 'toggle-nav';
 
-html,body{margin:0;height: 100%;box-sizing: border-box;}
+html,body{margin:0;height:100%; width:100%;box-sizing: border-box;}
 body {
-  font: $theme-font;
+  font: $font-sub;
   background-color: $bg-color;
   h1, h2 {
       font-family:$font-head
@@ -41,15 +41,17 @@ header{
    
     background-image: linear-gradient(transparent, $bg-color), url('../images/zastawa.jpg');
     background-size: cover;
+    
     width: 100%;
     height: 100%;
     position: absolute;
     
     
   }
+  
 }
 nav {
-  
+  max-width:100%;
   position:relative;
   display:flex;
   justify-content: space-between;
@@ -60,9 +62,12 @@ nav {
     width:250px;
     min-width:250px;
     z-index:110;
-    cursor:pointer
+    cursor:pointer;
+    @include respond-to(handhelds) {width:100px;min-width: 25px}
   }
+
   .sociallinks,.toggle-nav__social-links{
+    
     padding:0;
     display:flex;
     li:nth-child(2){order: 2;};
@@ -70,7 +75,10 @@ nav {
     svg{width:30px;height:30px; fill:white;transition: fill 350ms}}
     svg:hover{fill:$theme-color}
   }
-  .items-right{display:flex;}
+  .sociallinks{@include respond-to(handhelds){display:none}}
+  
+  .items-right{display:flex;
+    .cta {@include respond-to(handhelds){display:none}}}
   .hamburger-container{
     margin:auto 0;
     height: 100%;
@@ -150,6 +158,7 @@ main{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    @include respond-to(handhelds){flex-direction:column};
     /* height: 100%;
     min-height:100%;
     width: 100%; */
@@ -204,6 +213,7 @@ main{
     display:flex;
     overflow: auto;
     flex-direction: row;
+    @include respond-to(handhelds){flex-direction:column};
     justify-content: space-around;
     align-items: center;
     .menu__bg{
@@ -215,6 +225,7 @@ main{
       flex-basis: 40%;
       background: url(../images/menu.jpg);
       background-size:100%;
+      @include respond-to(handhelds){position:absolute;width:100%;height: 100%;z-index:-1;filter:brightness(0.2);background-repeat: no-repeat;background-size:cover}
       
     }
      
@@ -238,9 +249,10 @@ main{
   .bar{
     display:flex;
     flex-direction: row;
+    @include respond-to(handhelds){flex-direction:column}
     align-items: center;
     justify-content: space-around;
-    #bar__bg{background: linear-gradient($bg-color, rgba(44, 42, 42, 0.616)) , url(../images/bar.jpg);background-size: 100%;background-position: center;}
+    #bar__bg{background: linear-gradient($bg-color, rgba(44, 42, 42, 0.616)) , url(../images/bar.jpg);background-size: 100%;background-position: center;background-attachment: fixed;}
     .bar__text{flex-basis: 30%;z-index: 1; .btn{display:inline-block;}}
     .bar__article{flex-basis: 30%}
   }
@@ -259,7 +271,7 @@ footer{
   .links{
     list-style: none;display:flex;flex-direction: row;z-index:100;align-content:center;height:100%;justify-content: center;
     .link{align-self: center}
-    .link img{width:120px;height: auto};
+    .link img{width:75px;height: auto};
     .link:nth-child(2) img {width:300px};
   }
 }

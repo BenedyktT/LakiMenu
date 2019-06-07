@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Metrophobic|Sacramento');
 $font-head:  'Sacramento', cursive;
 $font-sub: 'Metrophobic', sans-serif;
-$theme-font:    verdana, sans-serif;
+
 $theme-color: rgb(209, 154, 45);
 $cta-fontsize: 1.5rem;
 $padding: 1rem;
@@ -27,3 +27,19 @@ hr:before { /* Not really supposed to work, but does */
     border-radius: 20px;
     
 }
+
+$break-small: 792px;
+$break-large: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+

@@ -32,3 +32,12 @@ const arrow = document.querySelector('.arrow')
 arrow.addEventListener('click',()=>{
     aboutSection.scrollIntoView({behavior:'smooth'})
 })
+
+//anchor to #about closes the nav
+
+
+const aboutNavLink = document.querySelector('.about-el')
+aboutNavLink.addEventListener('click',()=>{
+    hamburger.classList.remove('active')
+    document.querySelector('.toggle-nav').classList.remove('toggle-nav__active')
+})
