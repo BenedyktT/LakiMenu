@@ -6,9 +6,10 @@ $theme-color: rgb(209, 154, 45);
 $cta-fontsize: 1.5rem;
 $padding: 1rem;
 $bg-color: rgb(44, 42, 42);
+*{box-sizing: border-box;}
 a{text-decoration: none;color:inherit}
 hr {
-    overflow: visible; /* For IE */
+    overflow: visible; 
     height: 30px;
     border-style: solid;
     border-color: $theme-color;
@@ -16,7 +17,7 @@ hr {
     border-radius: 20px;
     width: 50%;
 }
-hr:before { /* Not really supposed to work, but does */
+hr:before { 
     display: block;
     content: "";
     height: 30px;
@@ -26,6 +27,34 @@ hr:before { /* Not really supposed to work, but does */
     border-width: 0 0 1px 0;
     border-radius: 20px;
     
+}
+.btn{
+  
+  width: 10rem;
+  background: inherit;
+  border:1px solid white;
+  cursor: pointer;
+  font-family: $font-sub;
+  color: white;
+  border-radius: 3px;
+  display:block;
+  padding:0.6rem;
+  transition: background-color 350ms;
+  /* justify-self: flex-end; */
+  align-self:center;
+  z-index: 4
+  
+}
+.btn:hover,.btn:active{background-color: $theme-color;}
+
+html,body{margin:0;height:100%; width:100%;box-sizing: border-box;}
+body {
+  font: $font-sub;
+  background-color: $bg-color;
+  h1, h2 {
+      font-family:$font-head
+  }
+  p,article {font-family:$font-sub;line-height: 1.4pc}
 }
 
 $break-small: 792px;
@@ -40,6 +69,123 @@ $break-large: 1024px;
   }
   @else if $media == wide-screens {
     @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+
+//navigation
+
+nav {
+  position:fixed;
+    top:0;
+  width:100%;
+  z-index:100;
+  display:flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem 1rem;
+  
+  .brand {z-index:100;display:flex;width:250px;overflow:visible;
+  img:nth-of-type(1){width:90px;object-fit: contain;transition: opacity 350ms ease}
+  img:nth-of-type(2){width: calc(100% - 90px);object-fit: contain;transition: opacity 1550ms ease-in-out}}
+  .brand img{
+    
+    z-index:100;
+    cursor:pointer;
+    @include respond-to(handhelds) {width:100px;min-width: 25px}
+  }
+
+  .sociallinks,.toggle-nav__social-links{
+    transition: opacity 150ms ease;
+    padding:0;
+    display:flex;
+    li:nth-child(2){order: 2;};
+    li{list-style: none; margin: 0 1rem;
+    svg{width:30px;height:30px; fill:white;transition: fill 350ms}}
+    svg:hover{fill:$theme-color}
+  }
+  .sociallinks{@include respond-to(handhelds){display:none}}
+  
+  .items-right{display:flex;
+    .cta {
+      transition: opacity 350ms ease;
+      @include respond-to(handhelds){display:none}}}
+  .hamburger-container{
+    margin:auto 0;
+    height: 100%;
+    display:flex;
+
+    .hamburger {
+      width: 30px;
+      height: 2px;
+      background: #FCFCFC;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+      margin:auto 0;
+      transition:0.5s;
+      position:relative;
+      z-index:50;
+      
+    }
+  }
+ 
+  .hamburger:before,
+  .hamburger:after {
+    content: '';
+    position:absolute;
+    width: 30px;
+    height: 2px;
+    background:#FCFCFC;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    transition:0.5s;
+}
+
+  
+  .hamburger:before {
+    top: -8px;
+  }
+  
+  .hamburger:after {
+    top: 8px;
+  }
+  label {z-index:150}
+  .hamburger-container.active .hamburger{
+    background: rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0)
+  }
+  .hamburger-container.active .hamburger::before{
+    top:0;
+    transform: rotate(140deg)
+  }
+  .hamburger-container.active .hamburger::after{
+    top:0;
+    transform: rotate(40deg)
+    
+  }
+  #nav__checkbox{display:none}
+  .cta{margin: 0 2rem;
+  };
+  
+}
+
+.arrow{
+  cursor: pointer;
+  position:absolute;
+  width: 100%;
+  text-align: center;
+  margin:auto;
+  bottom:0;
+  *{width:50px;height:50px;z-index:1; fill: white; margin:auto;transition:transform 350ms ease}
+  &:hover svg{
+    transform:scale(1.4)
+  }
+}
+
+.nav__scroll {
+  .cta {opacity:0}
+  .sociallinks{transform:scale(0)}
+  .brand {width:90px;
+    img:first-of-type{width:100%;opacity:0.6}
+    .logoname{opacity:0}
   }
 }
 

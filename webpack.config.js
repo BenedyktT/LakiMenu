@@ -96,6 +96,6 @@ output: {
         plugins: [
           imageminMozjpeg({quality: 50}),
           imageminWebp({autoFilter:true,resize:{width:1024,height:0}})]
-      }) 
+      })  
   ]
 };

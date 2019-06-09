@@ -2,6 +2,7 @@ import style from "./styles/main.css";
 import './styles/appStyles.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import './styles/menu.scss'
 
 
 //toggle nav
@@ -27,11 +28,7 @@ AOS.init({
     delay:300,
     duration:1350,
 })
-const aboutSection = document.querySelector('.about__chef')
-const arrow = document.querySelector('.arrow')
-arrow.addEventListener('click',()=>{
-    aboutSection.scrollIntoView({behavior:'smooth'})
-})
+
 
 //anchor to #about closes the nav
 
@@ -40,4 +37,31 @@ const aboutNavLink = document.querySelector('.about-el')
 aboutNavLink.addEventListener('click',()=>{
     hamburger.classList.remove('active')
     document.querySelector('.toggle-nav').classList.remove('toggle-nav__active')
+})
+
+const navbar = document.querySelector('.nav')
+let last_known_scroll_position = 0;
+let ticking = false
+const transformNavbar = (scroll) => {
+    if(scroll>100){
+        
+        navbar.classList.add('nav__scroll')
+    } else {
+        navbar.classList.remove('nav__scroll')
+        
+    }
+}
+window.addEventListener('scroll',()=>{
+        last_known_scroll_position = window.scrollY
+    
+
+
+if(!ticking){
+    window.requestAnimationFrame(()=>{
+        transformNavbar(last_known_scroll_position)
+        ticking = false
+        
+    })
+    ticking = true
+}
 })

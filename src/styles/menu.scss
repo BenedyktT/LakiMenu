@@ -1,0 +1,24 @@
+@import 'global';
+
+.menu-bg {
+    background-image: linear-gradient(transparent, $bg-color), url('../images/charr.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 500px;
+    height: 100vh;
+    position: absolute;
+    z-index:-1
+}
+header {}
+.menu-headline{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    font-size: 1.5rem;
+    
+}
