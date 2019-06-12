@@ -22,3 +22,22 @@ header {}
     font-size: 1.5rem;
     
 }
+
+.side-navbar{z-index:10;position:fixed;left:0;top:50vh;padding:0;
+ul{padding:0;
+li{transition:background-color 350ms ease;position:relative;height:50px;padding:1rem 0.3rem;background: rgba(209, 154, 45,0);border-bottom:1px solid white;text-align: left; ;a{display: inline-block;width:100%;height: 100%};div{display: inline-block;}}
+li.active{background:$theme-color;}
+li::after{
+    content:'';
+    position: absolute;
+    top:0;
+    width:0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 0 25px 15px;
+    right:-15px;
+    border-color:transparent transparent transparent $theme-color;
+    opacity: 0;
+    transition: opacity 350ms ease
+}}
+li.active::after{opacity: 1}}

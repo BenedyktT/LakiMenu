@@ -81,13 +81,14 @@ nav {
   width:100%;
   z-index:100;
   display:flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   padding: 1rem 1rem;
   
-  .brand {z-index:100;display:flex;width:250px;overflow:visible;
-  img:nth-of-type(1){width:90px;object-fit: contain;transition: opacity 350ms ease}
-  img:nth-of-type(2){width: calc(100% - 90px);object-fit: contain;transition: opacity 1550ms ease-in-out}}
+  .brand {z-index:100;display:flex;width:200px;overflow:visible;
+  img:nth-of-type(1){width:90px;object-fit: contain;transition: transform 1450ms ease}
+  img:nth-of-type(2){width: calc(100% - 60px);object-fit: contain;transition: transform 550ms ease}}
   .brand img{
     
     z-index:100;
@@ -183,9 +184,9 @@ nav {
 .nav__scroll {
   .cta {opacity:0}
   .sociallinks{transform:scale(0)}
-  .brand {width:90px;
-    img:first-of-type{width:100%;opacity:0.6}
-    .logoname{opacity:0}
+  .brand {
+    .logotype{width:90px;opacity:0.6;transform: scale(0.7) rotate(360deg)}
+    .logoname{transform:scale(0)}
   }
 }
 

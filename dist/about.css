@@ -79,22 +79,23 @@ nav {
   width: 100%;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   padding: 1rem 1rem; }
   nav .brand {
     z-index: 100;
     display: flex;
-    width: 250px;
+    width: 200px;
     overflow: visible; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
-      transition: opacity 350ms ease; }
+      transition: transform 1450ms ease; }
     nav .brand img:nth-of-type(2) {
-      width: calc(100% - 90px);
+      width: calc(100% - 60px);
       object-fit: contain;
-      transition: opacity 1550ms ease-in-out; }
+      transition: transform 550ms ease; }
   nav .brand img {
     z-index: 100;
     cursor: pointer; }
@@ -193,13 +194,13 @@ nav {
 .nav__scroll .sociallinks {
   transform: scale(0); }
 
-.nav__scroll .brand {
-  width: 90px; }
-  .nav__scroll .brand img:first-of-type {
-    width: 100%;
-    opacity: 0.6; }
-  .nav__scroll .brand .logoname {
-    opacity: 0; }
+.nav__scroll .brand .logotype {
+  width: 90px;
+  opacity: 0.6;
+  transform: scale(0.7) rotate(360deg); }
+
+.nav__scroll .brand .logoname {
+  transform: scale(0); }
 
 .about__header {
   height: 200px; }
@@ -406,22 +407,23 @@ nav {
   width: 100%;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   padding: 1rem 1rem; }
   nav .brand {
     z-index: 100;
     display: flex;
-    width: 250px;
+    width: 200px;
     overflow: visible; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
-      transition: opacity 350ms ease; }
+      transition: transform 1450ms ease; }
     nav .brand img:nth-of-type(2) {
-      width: calc(100% - 90px);
+      width: calc(100% - 60px);
       object-fit: contain;
-      transition: opacity 1550ms ease-in-out; }
+      transition: transform 550ms ease; }
   nav .brand img {
     z-index: 100;
     cursor: pointer; }
@@ -520,13 +522,13 @@ nav {
 .nav__scroll .sociallinks {
   transform: scale(0); }
 
-.nav__scroll .brand {
-  width: 90px; }
-  .nav__scroll .brand img:first-of-type {
-    width: 100%;
-    opacity: 0.6; }
-  .nav__scroll .brand .logoname {
-    opacity: 0; }
+.nav__scroll .brand .logotype {
+  width: 90px;
+  opacity: 0.6;
+  transform: scale(0.7) rotate(360deg); }
+
+.nav__scroll .brand .logoname {
+  transform: scale(0); }
 
 * {
   box-sizing: border-box; }
@@ -593,22 +595,23 @@ nav {
   width: 100%;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   padding: 1rem 1rem; }
   nav .brand {
     z-index: 100;
     display: flex;
-    width: 250px;
+    width: 200px;
     overflow: visible; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
-      transition: opacity 350ms ease; }
+      transition: transform 1450ms ease; }
     nav .brand img:nth-of-type(2) {
-      width: calc(100% - 90px);
+      width: calc(100% - 60px);
       object-fit: contain;
-      transition: opacity 1550ms ease-in-out; }
+      transition: transform 550ms ease; }
   nav .brand img {
     z-index: 100;
     cursor: pointer; }
@@ -707,13 +710,13 @@ nav {
 .nav__scroll .sociallinks {
   transform: scale(0); }
 
-.nav__scroll .brand {
-  width: 90px; }
-  .nav__scroll .brand img:first-of-type {
-    width: 100%;
-    opacity: 0.6; }
-  .nav__scroll .brand .logoname {
-    opacity: 0; }
+.nav__scroll .brand .logotype {
+  width: 90px;
+  opacity: 0.6;
+  transform: scale(0.7) rotate(360deg); }
+
+.nav__scroll .brand .logoname {
+  transform: scale(0); }
 
 .toggle-nav {
   width: 100%;

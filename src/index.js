@@ -65,3 +65,21 @@ if(!ticking){
     ticking = true
 }
 })
+
+
+const sideNavItem = document.querySelectorAll('.side-navbar__item')
+let dropDowns = Array.from(sideNavItem);
+
+const handleClick = (e) => {
+  e.preventDefault();
+  dropDowns.forEach(node => {
+    node.classList.remove('active');
+  });
+  e.currentTarget.classList.add('active');
+  
+  
+}
+
+dropDowns.forEach(node => {
+  node.addEventListener('click', handleClick)
+});

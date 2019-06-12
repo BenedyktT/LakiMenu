@@ -192,22 +192,23 @@ nav {
   width: 100%;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   padding: 1rem 1rem; }
   nav .brand {
     z-index: 100;
     display: flex;
-    width: 250px;
+    width: 200px;
     overflow: visible; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
-      transition: opacity 350ms ease; }
+      transition: transform 1450ms ease; }
     nav .brand img:nth-of-type(2) {
-      width: calc(100% - 90px);
+      width: calc(100% - 60px);
       object-fit: contain;
-      transition: opacity 1550ms ease-in-out; }
+      transition: transform 550ms ease; }
   nav .brand img {
     z-index: 100;
     cursor: pointer; }
@@ -306,13 +307,13 @@ nav {
 .nav__scroll .sociallinks {
   transform: scale(0); }
 
-.nav__scroll .brand {
-  width: 90px; }
-  .nav__scroll .brand img:first-of-type {
-    width: 100%;
-    opacity: 0.6; }
-  .nav__scroll .brand .logoname {
-    opacity: 0; }
+.nav__scroll .brand .logotype {
+  width: 90px;
+  opacity: 0.6;
+  transform: scale(0.7) rotate(360deg); }
+
+.nav__scroll .brand .logoname {
+  transform: scale(0); }
 
 * {
   box-sizing: border-box; }
@@ -379,22 +380,23 @@ nav {
   width: 100%;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   padding: 1rem 1rem; }
   nav .brand {
     z-index: 100;
     display: flex;
-    width: 250px;
+    width: 200px;
     overflow: visible; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
-      transition: opacity 350ms ease; }
+      transition: transform 1450ms ease; }
     nav .brand img:nth-of-type(2) {
-      width: calc(100% - 90px);
+      width: calc(100% - 60px);
       object-fit: contain;
-      transition: opacity 1550ms ease-in-out; }
+      transition: transform 550ms ease; }
   nav .brand img {
     z-index: 100;
     cursor: pointer; }
@@ -493,13 +495,13 @@ nav {
 .nav__scroll .sociallinks {
   transform: scale(0); }
 
-.nav__scroll .brand {
-  width: 90px; }
-  .nav__scroll .brand img:first-of-type {
-    width: 100%;
-    opacity: 0.6; }
-  .nav__scroll .brand .logoname {
-    opacity: 0; }
+.nav__scroll .brand .logotype {
+  width: 90px;
+  opacity: 0.6;
+  transform: scale(0.7) rotate(360deg); }
+
+.nav__scroll .brand .logoname {
+  transform: scale(0); }
 
 .toggle-nav {
   width: 100%;
@@ -794,22 +796,23 @@ nav {
   width: 100%;
   z-index: 100;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   padding: 1rem 1rem; }
   nav .brand {
     z-index: 100;
     display: flex;
-    width: 250px;
+    width: 200px;
     overflow: visible; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
-      transition: opacity 350ms ease; }
+      transition: transform 1450ms ease; }
     nav .brand img:nth-of-type(2) {
-      width: calc(100% - 90px);
+      width: calc(100% - 60px);
       object-fit: contain;
-      transition: opacity 1550ms ease-in-out; }
+      transition: transform 550ms ease; }
   nav .brand img {
     z-index: 100;
     cursor: pointer; }
@@ -908,13 +911,13 @@ nav {
 .nav__scroll .sociallinks {
   transform: scale(0); }
 
-.nav__scroll .brand {
-  width: 90px; }
-  .nav__scroll .brand img:first-of-type {
-    width: 100%;
-    opacity: 0.6; }
-  .nav__scroll .brand .logoname {
-    opacity: 0; }
+.nav__scroll .brand .logotype {
+  width: 90px;
+  opacity: 0.6;
+  transform: scale(0.7) rotate(360deg); }
+
+.nav__scroll .brand .logoname {
+  transform: scale(0); }
 
 .menu-bg {
   background-image: linear-gradient(transparent, #2c2a2a), url(assets/img/charr.jpg);
@@ -935,4 +938,43 @@ nav {
   position: absolute;
   top: 0;
   font-size: 1.5rem; }
+
+.side-navbar {
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 50vh;
+  padding: 0; }
+  .side-navbar ul {
+    padding: 0; }
+    .side-navbar ul li {
+      transition: background-color 350ms ease;
+      position: relative;
+      height: 50px;
+      padding: 1rem 0.3rem;
+      background: rgba(209, 154, 45, 0);
+      border-bottom: 1px solid white;
+      text-align: left; }
+      .side-navbar ul li a {
+        display: inline-block;
+        width: 100%;
+        height: 100%; }
+      .side-navbar ul li div {
+        display: inline-block; }
+    .side-navbar ul li.active {
+      background: #d19a2d; }
+    .side-navbar ul li::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 25px 0 25px 15px;
+      right: -15px;
+      border-color: transparent transparent transparent #d19a2d;
+      opacity: 0;
+      transition: opacity 350ms ease; }
+  .side-navbar li.active::after {
+    opacity: 1; }
 
