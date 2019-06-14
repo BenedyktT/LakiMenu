@@ -40,6 +40,9 @@ hr:before {
   border-width: 0 0 1px 0;
   border-radius: 20px; }
 
+ul {
+  padding: 0; }
+
 .btn {
   width: 10rem;
   background: inherit;
@@ -369,6 +372,9 @@ hr:before {
   border-width: 0 0 1px 0;
   border-radius: 20px; }
 
+ul {
+  padding: 0; }
+
 .btn {
   width: 10rem;
   background: inherit;
@@ -557,6 +563,9 @@ hr:before {
   border-color: #d19a2d;
   border-width: 0 0 1px 0;
   border-radius: 20px; }
+
+ul {
+  padding: 0; }
 
 .btn {
   width: 10rem;

@@ -153,6 +153,9 @@ hr:before {
   border-width: 0 0 1px 0;
   border-radius: 20px; }
 
+ul {
+  padding: 0; }
+
 .btn {
   width: 10rem;
   background: inherit;
@@ -341,6 +344,9 @@ hr:before {
   border-color: #d19a2d;
   border-width: 0 0 1px 0;
   border-radius: 20px; }
+
+ul {
+  padding: 0; }
 
 .btn {
   width: 10rem;
@@ -762,6 +768,9 @@ hr:before {
   border-width: 0 0 1px 0;
   border-radius: 20px; }
 
+ul {
+  padding: 0; }
+
 .btn {
   width: 10rem;
   background: inherit;
@@ -1018,7 +1027,7 @@ nav {
     align-items: center;
     justify-items: center;
     margin: auto; }
-  .menu-section .starters__bg, .menu-section .main-dishes__bg {
+  .menu-section .starters__bg, .menu-section .main-dishes__bg, .menu-section .desserts__bg, .menu-section .group__bg {
     overflow: hidden;
     height: 100%;
     width: 100%;
@@ -1032,6 +1041,16 @@ nav {
     background-attachment: fixed; }
   .menu-section .main-dishes__bg {
     background: url(assets/img/main-dish.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; }
+  .menu-section .desserts__bg {
+    background: url(assets/img/dessert.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; }
+  .menu-section .group__bg {
+    background: url(assets/img/group.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed; }
@@ -1066,4 +1085,22 @@ nav {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
+
+.menu__items {
+  display: grid;
+  list-style: none;
+  grid-template-columns: 1fr;
+  text-align: center;
+  justify-content: center;
+  grid-auto-rows: minmax(250px, 1fr); }
+
+.group__menu {
+  width: 60%;
+  margin: auto; }
+  @media only screen and (max-width: 792px) {
+    .group__menu {
+      width: 100%; } }
+
+.menu__item-content {
+  list-style: none; }
 

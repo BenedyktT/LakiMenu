@@ -69,7 +69,7 @@ li.active::after{opacity: 1}}
         justify-items: center;
         margin: auto
     }
-    .starters__bg,.main-dishes__bg{
+    .starters__bg,.main-dishes__bg,.desserts__bg,.group__bg{
         
         overflow: hidden;
         
@@ -84,14 +84,20 @@ li.active::after{opacity: 1}}
         background-position: center;background-attachment: fixed;}
     .main-dishes__bg{background:url('../images/main-dish.jpg');background-size:cover;
         background-position: center;background-attachment: fixed;}
+    .desserts__bg{background:url('../images/dessert.jpg');background-size:cover;
+        background-position: center;background-attachment: fixed;}
+    .group__bg{background:url('../images/group.jpg');background-size:cover;
+        background-position: center;background-attachment: fixed;}
     .headline__text{background:rgba(0, 0, 0, 0.207);width:50%;margin:auto}
 }   
     .menu__list{margin:2rem 0;height: 100%;min-height: 600px;}
     .menu{text-align:center;list-style-type: none;width:60%;margin:auto;display:grid;grid-template-columns: repeat(auto-fit,minmax(300px,1fr));grid-gap: 1rem;grid-auto-rows: minmax(60px,250px);
         align-items: center;justify-content: space-evenly;
         .menu--item{font-size:1.2rem}
-        .menu--describtion{font-size: 0.7rem}
+        .menu--describtion{font-size: 0.7rem};
     }
+
+       
 
     .main-dishes__bg{
         background:url('../images/profeska.jpg');
@@ -99,3 +105,10 @@ li.active::after{opacity: 1}}
         background-position: center;
         background-attachment: fixed;
     }
+
+    .menu__items{display:grid;list-style: none;grid-template-columns: 1fr;text-align: center;justify-content: center;
+    grid-auto-rows: minmax(250px,1fr)}
+    .group__menu{width:60%;margin:auto;@include respond-to(handhelds){width:100%}}
+    .menu__item-content{list-style: none;}
+
+    

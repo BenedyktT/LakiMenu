@@ -51,24 +51,14 @@ const transformNavbar = (scroll) => {
         
     }
 }
-window.addEventListener('scroll',()=>{
-        last_known_scroll_position = window.scrollY
-    
 
 
-if(!ticking){
-    window.requestAnimationFrame(()=>{
-        transformNavbar(last_known_scroll_position)
-        ticking = false
-        
-    })
-    ticking = true
-}
-})
 
 
 const sideNavItem = document.querySelectorAll('.side-navbar__item')
 let dropDowns = Array.from(sideNavItem);
+const starterSection = document.querySelector('#starters')
+const activeButton = document.querySelector('.active')
 
 const handleClick = (e) => {
   e.preventDefault();
@@ -77,9 +67,75 @@ const handleClick = (e) => {
   });
   e.currentTarget.classList.add('active');
   
+ 
   
 }
 
 dropDowns.forEach(node => {
   node.addEventListener('click', handleClick)
+  
 });
+
+let dropDownPos = []
+
+for(let i=0; i<dropDowns.length;i++){
+    dropDownPos.push({navEl:dropDowns[i],position:document.querySelector(dropDowns[i].children[0].hash).offsetTop,element:dropDowns[i]})
+    dropDowns[i].addEventListener('click',()=>{
+         if(dropDowns[i].classList.contains('active')){
+            let current = document.querySelector(`${dropDowns[i].children[0].hash}`)
+            current.scrollIntoView({behavior:'smooth'})
+            
+        } 
+    })
+}
+
+const checkPosition = (scroll) =>{
+    
+    for(let i = 0; i<dropDownPos.length;i++){
+        dropDownPos[i].navEl.classList.remove('active')
+        if(dropDownPos[i].position<scroll){
+            dropDownPos[i].navEl.classList.add('active')
+        } 
+     /*    if(scroll>dropDownPos[i].position&&scroll<dropDownPos[i+1].position&&dropDownPos[i-1].position){
+            dropDownPos[i-1].navEl.classList.remove('active')
+        } */
+           
+        
+    } 
+    
+}
+
+
+window.addEventListener('scroll',()=>{
+    last_known_scroll_position = window.scrollY
+
+if(!ticking){
+window.requestAnimationFrame(()=>{
+    transformNavbar(last_known_scroll_position)
+    checkPosition(last_known_scroll_position)
+    ticking = false
+})
+ticking = true
+}
+})
+
+/* const activeClassOnScroll = function(){
+    
+    console.log(starters.offsetTop)
+    console.log(document.querySelector('body').offsetTop)
+} */
+/* const starters = document.querySelector('#starters')
+ 
+let divPos = starters.offsetTop
+let navelement = document.querySelectorAll('.side-navbar__item')
+/* window.addEventListener('scroll',activeClassOnScroll) */
+
+/* console.log(navelement)
+ 
+window.addEventListener('scroll',()=>{
+    
+    
+        
+    
+    
+}) */
