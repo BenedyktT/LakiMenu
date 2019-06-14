@@ -6,6 +6,7 @@ $theme-color: rgb(209, 154, 45);
 $cta-fontsize: 1.5rem;
 $padding: 1rem;
 $bg-color: rgb(44, 42, 42);
+
 *{box-sizing: border-box;}
 a{text-decoration: none;color:inherit}
 hr {
@@ -73,23 +74,22 @@ $break-large: 1024px;
 }
 
 
+
 //navigation
 
 nav {
   position:fixed;
     top:0;
-  width:100%;
+  width:100vw;
   z-index:100;
   display:flex;
-  
   justify-content: space-between;
-  align-items: center;
+  align-content: center;
   padding: 1rem 1rem;
-  @include respond-to(handhelds){margin:0;padding:0}
   
-  .brand {z-index:100;display:flex;width:200px;overflow:visible;align-items:center;
+  .brand {z-index:100;display:flex;width:200px;overflow:visible;
   img:nth-of-type(1){width:90px;object-fit: contain;transition: transform 1450ms ease}
-  img:nth-of-type(2){width: calc(100% - 60px);align-self: center;object-fit: contain;transition: transform 550ms ease}}
+  img:nth-of-type(2){width: calc(100% - 60px);object-fit: contain;transition: transform 550ms ease}}
   .brand img{
     
     z-index:100;
@@ -108,8 +108,7 @@ nav {
   }
   .sociallinks{@include respond-to(handhelds){display:none}}
   
-  .items-right{display:flex;
-    @include respond-to(handhelds){align-self: center;margin:1rem}
+  .items-right{display:flex;z-index:100;
     .cta {
       transition: opacity 350ms ease;
       @include respond-to(handhelds){display:none}}}
@@ -117,9 +116,8 @@ nav {
     margin:auto 0;
     height: 100%;
     display:flex;
-  
+
     .hamburger {
-     
       width: 30px;
       height: 2px;
       background: #FCFCFC;
@@ -173,11 +171,12 @@ nav {
 
 .arrow{
   cursor: pointer;
-  position:absolute;
+  position: absolute;;
   width: 100%;
   text-align: center;
   margin:auto;
   bottom:0;
+  top:90%;
   *{width:50px;height:50px;z-index:1; fill: white; margin:auto;transition:transform 350ms ease}
   &:hover svg{
     transform:scale(1.4)
