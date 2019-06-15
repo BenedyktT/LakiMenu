@@ -84,8 +84,8 @@ for(let i=0; i<dropDowns.length;i++){
          if(dropDowns[i].classList.contains('active')){
             let current = document.querySelector(`${dropDowns[i].children[0].hash}`)
             current.scrollIntoView({behavior:'smooth'})
-            
         } 
+        
     })
 }
 
@@ -93,9 +93,19 @@ const checkPosition = (scroll) =>{
     
     for(let i = 0; i<dropDownPos.length;i++){
         dropDownPos[i].navEl.classList.remove('active')
-        if(dropDownPos[i].position<scroll){
+      /*   if(dropDownPos[i].position<scroll){
             dropDownPos[i].navEl.classList.add('active')
+        }  */
+       /*  console.log(scroll>dropDownPos[i].position&&scroll<dropDownPos[i+1]) */
+       if(scroll+202<dropDownPos[dropDownPos.length-1].position){
+        if(dropDownPos[i].position<scroll+202&&scroll<dropDownPos[i+1].position){
+            dropDownPos[i].navEl.classList.add("active")
+            console.log(scroll<dropDownPos[dropDownPos.length-1].position) 
         } 
+       } else {
+           dropDownPos[dropDownPos.length-1].navEl.classList.add("active")
+       }
+      
      /*    if(scroll>dropDownPos[i].position&&scroll<dropDownPos[i+1].position&&dropDownPos[i-1].position){
             dropDownPos[i-1].navEl.classList.remove('active')
         } */
