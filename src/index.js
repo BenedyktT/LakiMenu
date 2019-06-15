@@ -100,7 +100,6 @@ const checkPosition = (scroll) =>{
        if(scroll+202<dropDownPos[dropDownPos.length-1].position){
         if(dropDownPos[i].position<scroll+202&&scroll<dropDownPos[i+1].position){
             dropDownPos[i].navEl.classList.add("active")
-            console.log(scroll<dropDownPos[dropDownPos.length-1].position) 
         } 
        } else {
            dropDownPos[dropDownPos.length-1].navEl.classList.add("active")

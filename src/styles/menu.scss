@@ -88,7 +88,7 @@ li.active::after{opacity: 1}}
         background-position: center;background-attachment: fixed;}
     .group__bg{background:url('../images/group.jpg');background-size:cover;
         background-position: center;background-attachment: fixed;}
-    .headline__text{background:rgba(0, 0, 0, 0.207);width:50%;margin:auto}
+    .headline__text{background:rgba(0, 0, 0, 0.207);width:50%;margin:auto;font-size: 2rem}
 }   
     .menu__list{margin:2rem 0;height: 100%;min-height: 600px;}
     .menu{text-align:center;list-style-type: none;width:60%;margin:auto;display:grid;grid-template-columns: repeat(auto-fit,minmax(300px,1fr));grid-gap: 1rem;grid-auto-rows: minmax(60px,250px);
