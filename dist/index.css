@@ -196,13 +196,17 @@ nav {
   z-index: 100;
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   padding: 1rem 1rem; }
+  @media only screen and (max-width: 792px) {
+    nav {
+      align-items: center; } }
   nav .brand {
     z-index: 100;
     display: flex;
     width: 200px;
-    overflow: visible; }
+    overflow: visible;
+    align-items: center; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
@@ -388,13 +392,17 @@ nav {
   z-index: 100;
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   padding: 1rem 1rem; }
+  @media only screen and (max-width: 792px) {
+    nav {
+      align-items: center; } }
   nav .brand {
     z-index: 100;
     display: flex;
     width: 200px;
-    overflow: visible; }
+    overflow: visible;
+    align-items: center; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
@@ -811,13 +819,17 @@ nav {
   z-index: 100;
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   padding: 1rem 1rem; }
+  @media only screen and (max-width: 792px) {
+    nav {
+      align-items: center; } }
   nav .brand {
     z-index: 100;
     display: flex;
     width: 200px;
-    overflow: visible; }
+    overflow: visible;
+    align-items: center; }
     nav .brand img:nth-of-type(1) {
       width: 90px;
       object-fit: contain;
@@ -959,15 +971,15 @@ nav {
   z-index: 10;
   position: fixed;
   left: 0;
-  top: 25%;
+  top: 35%;
   padding: 0;
-  background: rgba(44, 42, 42, 0.7);
+  background: rgba(44, 42, 42, 0.2);
   width: 20%;
   min-width: 200px;
   height: 300px;
   display: flex;
   align-items: flex-start;
-  padding: 3rem 0; }
+  padding: 2rem 0; }
   @media only screen and (max-width: 792px) {
     .side-navbar {
       display: none; } }

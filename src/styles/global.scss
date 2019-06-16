@@ -79,16 +79,17 @@ $break-large: 1024px;
 //navigation
 
 nav {
+  @include respond-to(handhelds){align-items: center;}
   position:fixed;
     top:0;
   width:100vw;
   z-index:100;
   display:flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   padding: 1rem 1rem;
   
-  .brand {z-index:100;display:flex;width:200px;overflow:visible;
+  .brand {z-index:100;display:flex;width:200px;overflow:visible;align-items:center;
   img:nth-of-type(1){width:90px;object-fit: contain;transition: transform 1450ms ease}
   img:nth-of-type(2){width: calc(100% - 60px);object-fit: contain;transition: transform 550ms ease}}
   .brand img{

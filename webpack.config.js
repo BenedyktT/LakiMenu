@@ -91,11 +91,11 @@ output: {
         from: 'src/images/',
         to: path.resolve(__dirname, 'dist')
       }]), */
-       new ImageminPlugin({
+         new ImageminPlugin({
         pngquant: {quality: '50-50'},
         plugins: [
           imageminMozjpeg({quality: 50}),
           imageminWebp({autoFilter:true,resize:{width:1024,height:0}})]
-      })     
+      })      
   ]
 };

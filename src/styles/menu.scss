@@ -27,7 +27,7 @@ header {}
 
 .side-navbar{
     @include respond-to(handhelds){display:none}
-    z-index:10;position:fixed;left:0;top:25%;padding:0;background:rgba($bg-color,0.7);width:20%;min-width: 200px;height:300px;display:flex;align-items:flex-start;padding:3rem 0;
+    z-index:10;position:fixed;left:0;top:35%;padding:0;background:rgba($bg-color,0.2);width:20%;min-width: 200px;height:300px;display:flex;align-items:flex-start;padding:2rem 0;
 ul{padding:0;width:100%;margin:0;list-style: none;;
 li{transition:background-color 350ms ease;position:relative;height:50px;padding:1rem 0.3rem;background: rgba(209, 154, 45,0);border-bottom:1px solid white;text-align: left; ;a{display: inline-block;width:100%;height: 100%};div{display: inline-block;}}
 li.active{background:$theme-color;}
