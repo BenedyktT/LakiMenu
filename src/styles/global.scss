@@ -87,7 +87,7 @@ nav {
   display:flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem;
+  padding: 1rem 3rem;
   
   .brand {z-index:100;display:flex;width:200px;overflow:visible;align-items:center;
   img:nth-of-type(1){width:90px;object-fit: contain;transition: transform 1450ms ease}
@@ -110,7 +110,9 @@ nav {
   }
   .sociallinks{@include respond-to(handhelds){display:none}}
   
-  .items-right{display:flex;z-index:100;
+  .items-right{
+    .toggle-nav__label{height: 50px;}
+    display:flex;z-index:100;
     .cta {
       transition: opacity 350ms ease;
       @include respond-to(handhelds){display:none}}}
