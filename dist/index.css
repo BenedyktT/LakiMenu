@@ -1069,7 +1069,8 @@ nav {
   .menu-section .headline__text {
     background: rgba(0, 0, 0, 0.207);
     width: 50%;
-    margin: auto; }
+    margin: auto;
+    font-size: 2rem; }
 
 .menu__list {
   margin: 2rem 0;
