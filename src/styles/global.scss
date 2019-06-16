@@ -79,7 +79,7 @@ $break-large: 1024px;
 //navigation
 
 nav {
-  @include respond-to(handhelds){align-items: center;}
+  @include respond-to(handhelds){align-items: center;padding: 1rem 1rem}
   position:fixed;
     top:0;
   width:100vw;

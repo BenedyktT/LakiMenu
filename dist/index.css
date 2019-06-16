@@ -200,7 +200,8 @@ nav {
   padding: 1rem 3rem; }
   @media only screen and (max-width: 792px) {
     nav {
-      align-items: center; } }
+      align-items: center;
+      padding: 1rem 1rem; } }
   nav .brand {
     z-index: 100;
     display: flex;
@@ -398,7 +399,8 @@ nav {
   padding: 1rem 3rem; }
   @media only screen and (max-width: 792px) {
     nav {
-      align-items: center; } }
+      align-items: center;
+      padding: 1rem 1rem; } }
   nav .brand {
     z-index: 100;
     display: flex;
@@ -827,7 +829,8 @@ nav {
   padding: 1rem 3rem; }
   @media only screen and (max-width: 792px) {
     nav {
-      align-items: center; } }
+      align-items: center;
+      padding: 1rem 1rem; } }
   nav .brand {
     z-index: 100;
     display: flex;
