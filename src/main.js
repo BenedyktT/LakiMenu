@@ -3,13 +3,16 @@ import style from "./styles/main.css";
 import './styles/about.scss'
 import './styles/appStyles.scss';
 
-let carousel = new Glide('.glide',{
+
+
+  
+const testimonials = new Glide('.glide-testimonials',{
     type:"carousel",
     hoverpause: false,
-    gap: 10,
+    gap: 20,
     startAt:0,
-    perView:3,
-    autoplay:2000,
+    perView:2,
+    autoplay:false,
     animationDuration: 1350,
     peek: {
         before: 50,
@@ -23,10 +26,6 @@ let carousel = new Glide('.glide',{
         }
     },
     1024: {
-        perView: 2
-        
-    },
-    600: {
         perView: 1,
         peek: {
             before:0,
@@ -37,13 +36,7 @@ let carousel = new Glide('.glide',{
     },
     
 })
-/* glide.on('mount.after', function () {
-    // Logic fired after mounting
-  }) */
-
-    carousel.mount()
-  
-
+testimonials.mount()
 
 const slide = document.querySelectorAll('glide__slide img')
 slide.forEach((e)=>e.style.opacity=0)

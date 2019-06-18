@@ -2,18 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Metrophobic|Sacramento);
 body {background:black;color:white}
 
-.grid {
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
-    overflow: hidden
-
-}
 
 
-img {
-    width:500px;
-    
-}
+
 * {
   box-sizing: border-box; }
 
@@ -212,6 +203,25 @@ nav {
 
 .nav__scroll .brand .logoname {
   transform: scale(0); }
+
+footer {
+  overflow: hidden;
+  max-width: 100%; }
+  footer .links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    z-index: 100;
+    align-content: center;
+    height: 100%;
+    justify-content: center; }
+    footer .links .link {
+      align-self: center; }
+    footer .links .link img {
+      width: 75px;
+      height: auto; }
+    footer .links .link:nth-child(2) img {
+      width: 150px; }
 
 .about__header {
   height: 200px; }
@@ -552,6 +562,25 @@ nav {
 .nav__scroll .brand .logoname {
   transform: scale(0); }
 
+footer {
+  overflow: hidden;
+  max-width: 100%; }
+  footer .links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    z-index: 100;
+    align-content: center;
+    height: 100%;
+    justify-content: center; }
+    footer .links .link {
+      align-self: center; }
+    footer .links .link img {
+      width: 75px;
+      height: auto; }
+    footer .links .link:nth-child(2) img {
+      width: 150px; }
+
 * {
   box-sizing: border-box; }
 
@@ -751,6 +780,25 @@ nav {
 .nav__scroll .brand .logoname {
   transform: scale(0); }
 
+footer {
+  overflow: hidden;
+  max-width: 100%; }
+  footer .links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    z-index: 100;
+    align-content: center;
+    height: 100%;
+    justify-content: center; }
+    footer .links .link {
+      align-self: center; }
+    footer .links .link img {
+      width: 75px;
+      height: auto; }
+    footer .links .link:nth-child(2) img {
+      width: 150px; }
+
 .toggle-nav {
   width: 100%;
   height: 100%;
@@ -898,41 +946,85 @@ main .section.menu {
         background-repeat: no-repeat;
         background-size: cover; } }
 
-main .section.staff {
+main .testimonials {
+  height: 100%;
+  overflow: visible;
+  position: relative; }
+  main .testimonials .feed {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: 70%;
+    margin: auto;
+    text-align: left;
+    grid-gap: 2rem; }
+    main .testimonials .feed .feed__review {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start; }
+      main .testimonials .feed .feed__review .feed__review--stars {
+        color: #d19a2d; }
+    main .testimonials .feed .feed__author {
+      position: relative;
+      overflow: visible; }
+      main .testimonials .feed .feed__author .feed__author--img {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        margin-bottom: 1rem; }
+      main .testimonials .feed .feed__author p {
+        margin: 0; }
+      main .testimonials .feed .feed__author .feed__author--name {
+        font-weight: bold; }
+  main .testimonials .feed__author::after {
+    content: ' ';
+    position: absolute;
+    border-right: 3px solid #d19a2d;
+    right: -10px;
+    top: 0;
+    height: 100%; }
+  main .testimonials .glide__arrow--left svg {
+    transform: rotate(180deg); }
+  main .testimonials .glide__arrow {
+    border: none;
+    padding: 0; }
+    main .testimonials .glide__arrow svg {
+      transition: 350ms ease; }
+    main .testimonials .glide__arrow svg:hover {
+      fill: #d19a2d; }
+
+main .section__photos {
   height: 100%; }
-  main .section.staff .head {
-    z-index: 2; }
-  main .section.staff .glide__slides {
-    z-index: 2;
-    overflow-x: hidden; }
-  main .section.staff .glide {
+  main .section__photos .gallery__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 150px;
     overflow: hidden;
-    width: 100%; }
-  main .section.staff .glide__track .glide__slide {
-    transition: filter 1550ms ease;
-    filter: brightness(0.6) grayscale(80%);
-    height: 500px;
-    width: 500px;
-    overflow: hidden;
-    z-index: 1; }
-  main .section.staff .glide__track .glide__slide:hover {
-    filter: none; }
-  main .section.staff .glide__track img {
-    overflow: hidden;
-    object-fit: cover !important;
-    min-height: 100%;
-    width: 100%; }
-  main .section.staff .glide__track .slide__overlay {
-    height: 100%;
-    width: 100%; }
-    main .section.staff .glide__track .slide__overlay .btn__staff {
-      position: absolute;
-      top: 50%;
-      left: calc(50% - 5rem);
-      display: none; }
-  main .section.staff .glide__track .glide__bullet {
-    filter: opacity(0.2) !important; }
+    grid-gap: 1rem;
+    grid-auto-flow: dense; }
+    main .section__photos .gallery__items .gallery__item {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; }
+      main .section__photos .gallery__items .gallery__item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom; }
+    main .section__photos .gallery__items .gallery__item:nth-of-type(2) {
+      grid-column: 1/-1;
+      grid-row: 1/ span 3; }
+    main .section__photos .gallery__items .gallery__item:nth-of-type(3) {
+      grid-column: span 2;
+      grid-row: span 2; }
+    main .section__photos .gallery__items .gallery__item:nth-of-type(4) {
+      grid-column: span 2;
+      grid-row: span 3; }
 
 main .bar {
   display: flex;
@@ -962,22 +1054,4 @@ main .bar {
   background: linear-gradient(#2c2a2a, transparent 70%, #2c2a2a);
   z-index: 1;
   overflow: hidden; }
-
-footer {
-  overflow: hidden; }
-  footer .links {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    z-index: 100;
-    align-content: center;
-    height: 100%;
-    justify-content: center; }
-    footer .links .link {
-      align-self: center; }
-    footer .links .link img {
-      width: 75px;
-      height: auto; }
-    footer .links .link:nth-child(2) img {
-      width: 300px; }
 
