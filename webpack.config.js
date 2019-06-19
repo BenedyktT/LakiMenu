@@ -55,6 +55,7 @@ output: {
           "style-loader",
           MiniCssExtractPlugin.loader,
           "css-loader",
+          { loader: "postcss-loader", options: {} },
           "sass-loader"
         ]
       }
