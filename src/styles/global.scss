@@ -7,7 +7,8 @@ $cta-fontsize: 1.5rem;
 $padding: 1rem;
 $bg-color: rgb(44, 42, 42);
 
-*{box-sizing: border-box;}
+*{box-sizing: border-box;
+line-height: 1.5rem}
 a{text-decoration: none;color:inherit}
 hr {
     overflow: visible; 
@@ -56,7 +57,7 @@ body {
   h1, h2 {
       font-family:$font-head
   }
-  p,article {font-family:$font-sub;line-height: 1.4pc}
+  p,article {font-family:$font-sub;}
 }
 
 $break-small: 792px;

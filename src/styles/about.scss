@@ -1,25 +1,28 @@
 @import 'global';
-.about__header{height:200px};
-.about__subpage {
+.about__header{min-height:100px;height: 100px;};
+.about__subpage {margin-top: 2rem;
     
     
     article{
-        margin:3rem 0;
-        width:30rem;
-    margin:auto;
-    text-align: center;
-    padding:3rem 0;
+        display:flex;
+        flex-direction: column;
+        justify-items: center;
+        text-align: center;
+        max-width: 50%;
+        @include respond-to(handhelds){max-width: 95%}
+        margin:auto;
+        .text{margin:2rem 3rem}
     };
     h1{font-size: 3rem};
     .text__address{
         margin:2rem;
         color:$theme-color;
     };
-    .map-container{height: 350px;width:650px;margin:auto}
+    .map-container{@include respond-to(handhelds){max-width: 100%;margin:0};height: 350px;width:550px;margin:auto}
     #map {
         height: 100%;
+        width: 100%;
         min-width:100%;  
         padding:0
-        
     }
 }

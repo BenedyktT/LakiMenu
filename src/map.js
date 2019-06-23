@@ -180,7 +180,7 @@ class Map {
       
       return new googleMaps.Map(mapElement, {
         center: myLatLng,
-        zoom: 12,
+        zoom: 9,
         styles:styler,
         disableDefaultUI: true
         
