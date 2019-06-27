@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 import './styles/menu.scss'
 import GLightbox from 'glightbox'
 
-var lightboxDescription = GLightbox({
+GLightbox({
     selector: 'gallery__slide'
   });
 
