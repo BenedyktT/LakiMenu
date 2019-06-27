@@ -15,6 +15,7 @@ module.exports = {
 output: {
   filename: '[chunkhash].bundle.js'
 },
+target: 'web',
   module: {
     rules: [
        {
@@ -66,22 +67,26 @@ output: {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html",
-      chunks: ['index', 'main']
+      chunks: ['index', 'main'],
+      excludeChunks: [ 'server' ]
     }),
     new HtmlWebPackPlugin({
       template: "./src/about.html",
       filename: "./about.html",
-      chunks: ['index','about']
+      chunks: ['index','about'],
+      excludeChunks: [ 'server' ]
     }),
     new HtmlWebPackPlugin({
       template: "./src/menu.html",
       filename: "./menu.html",
-      chunks: ['index']
+      chunks: ['index'],
+      excludeChunks: [ 'server' ]
     }),
     new HtmlWebPackPlugin({
       template: "./src/cocktails.html",
       filename: "./cocktails.html",
-      chunks: ['index']
+      chunks: ['index'],
+      excludeChunks: [ 'server' ]
     }),
     new MiniCssExtractPlugin({
         filename: "[name].css",
@@ -92,11 +97,11 @@ output: {
         from: 'src/images/',
         to: path.resolve(__dirname, 'dist')
       }]), */
-          new ImageminPlugin({
+           new ImageminPlugin({
         pngquant: {quality: '40-50'},
         plugins: [
           imageminMozjpeg({quality: 50}),
           imageminWebp({autoFilter:true,resize:{width:600,height:0}})]
-      })      
+      })     
   ]
 };
