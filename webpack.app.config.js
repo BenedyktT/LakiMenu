@@ -68,40 +68,36 @@ target: 'web',
       template: "./src/index.html",
       filename: "./index.html",
       chunks: ['index', 'main'],
-      excludeChunks: [ 'server' ]
+      
     }),
     new HtmlWebPackPlugin({
       template: "./src/about.html",
       filename: "./about.html",
       chunks: ['index','about'],
-      excludeChunks: [ 'server' ]
+      
     }),
     new HtmlWebPackPlugin({
       template: "./src/menu.html",
       filename: "./menu.html",
       chunks: ['index'],
-      excludeChunks: [ 'server' ]
+      
     }),
     new HtmlWebPackPlugin({
       template: "./src/cocktails.html",
       filename: "./cocktails.html",
       chunks: ['index'],
-      excludeChunks: [ 'server' ]
+      
     }),
     new MiniCssExtractPlugin({
         filename: "[name].css",
         chunkFilename: "[id].css"
       }),
-      /* new CopyWebpackPlugin([{
-       new CopyWebpackPlugin([{
-        from: 'src/images/',
-        to: path.resolve(__dirname, 'dist')
-      }]), */
+
            new ImageminPlugin({
         pngquant: {quality: '40-50'},
         plugins: [
           imageminMozjpeg({quality: 50}),
           imageminWebp({autoFilter:true,resize:{width:600,height:0}})]
-      })     
+      })      
   ]
 };

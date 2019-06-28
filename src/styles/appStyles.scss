@@ -4,7 +4,7 @@
 @import 'themeColors';
 @import 'global';
 @import 'toggle-nav';
- @import '../../node_modules/fslightbox/fslightbox.min.css';
+
 
 
 
@@ -13,14 +13,13 @@ header{
   min-height: 400px;overflow: hidden;
   position: relative;
   .header-bg{
-   
-    background-image: linear-gradient(transparent, $bg-color), url('../images/zastawa.jpg');
+    background-image: linear-gradient(transparent, $bg-color), url('../images/puffin.jpg');
     background-size: cover;
     width:100%;
     max-width: 100%;
     height: 100%;
     position: absolute;
-    
+    @include respond-to(handhelds){background-position: center}
   }
   
 }
@@ -136,7 +135,7 @@ svg:hover{fill: $theme-color}}
       list-style: none;
       height: 100%;
       display:grid;
-      grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
       grid-auto-rows: 150px;
       overflow: hidden;
       grid-gap: 1rem;
@@ -147,15 +146,15 @@ svg:hover{fill: $theme-color}}
         img{display: block;width: 100%;height: 100%;object-fit: cover;object-position: bottom}
       }
       .gallery__item:nth-of-type(1){}
-      .gallery__item:nth-of-type(2){grid-column: 1/-1;grid-row:1/ span 3;}
+      .gallery__item:nth-of-type(2){grid-column: 1}
       .gallery__item:nth-of-type(3){grid-column: span 2;grid-row: span 2}
       .gallery__item:nth-of-type(4){grid-column: span 2;grid-row: span 3}
       .gallery__item:nth-of-type(5){}
-      .gallery__item:nth-of-type(6){}
+      .gallery__item:nth-of-type(6){grid-column: span 2}
       .gallery__item:nth-of-type(7){}
       .gallery__item:nth-of-type(8){}
       .gallery__item:nth-of-type(9){}
-      .gallery__item:nth-of-type(10){}
+      .gallery__item:nth-of-type(10){grid-row: span 2}
       .gallery__item:nth-of-type(11){}
       .gallery__item:nth-of-type(12){}
       .gallery__item:nth-of-type(13){}
@@ -164,9 +163,9 @@ svg:hover{fill: $theme-color}}
     }
   }
   .bar{
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-gap:1rem;
+    display:flex;
+    flex-direction: column;
+    overflow: hidden;
     width:100%;
     margin:4rem auto;
     height: 100%;
@@ -174,8 +173,8 @@ svg:hover{fill: $theme-color}}
     align-items: center;
     justify-content: space-around;
     #bar__bg{background: linear-gradient($bg-color, rgba(44, 42, 42, 0.616)) , url(../images/bar.jpg);background-size: 100%;background-position: center;background-attachment: fixed;}
-    .bar__text{flex-basis: 30%;z-index: 1; .btn{display:inline-block;}}
-    .bar__article{@include respond-to(handhelds){margin: 0 2rems};flex-basis: 30%}
+    .bar__text{flex-basis: 20%;z-index: 1; .btn{display:inline-block;}}
+    .bar__article{@include respond-to(handhelds){margin: 0 2rems};width: 50%;margin-top:2rem;}
   }
 }
 .bg--overlay{

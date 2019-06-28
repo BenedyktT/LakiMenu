@@ -3,11 +3,9 @@ import './styles/appStyles.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './styles/menu.scss'
-import GLightbox from 'glightbox'
+import './styles/cocktail.scss'
 
-GLightbox({
-    selector: 'gallery__slide'
-  });
+
 
 //toggle nav
 
