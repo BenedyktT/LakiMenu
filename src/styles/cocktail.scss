@@ -4,9 +4,7 @@
     min-height: inherit;
     max-height: 150px
 }
-.cocktails__bg{background:url('../images/cocktail/cocktails.png');background-size:100%;
-    background-position:top;background-attachment: fixed;
-    @include respond-to(handhelds){background-position: center};
+.headline__bg{
     background-repeat: no-repeat;
     overflow: hidden;   
     height: 100%;
@@ -14,15 +12,24 @@
     margin:auto;
     position: absolute;
     z-index:-1}
+#headline__not-first{margin:0}
+.cocktails__bg{background:url('../images/cocktail/cocktails.png');background-size: cover;
+background-position:top;background-attachment: fixed;}
+@include respond-to(handhelds){background-position: center};
+
+.beers__bg{background:url('../images/cocktail/beer.jpg');background-size: cover;
+    background-position:top;background-attachment: fixed;};
 .cocktail-menu{width: 80%;margin: auto}
 .cocktail-menu__items{
+    width: 100%;
     list-style: none;
     display:grid;
     grid-gap: 1rem;
     text-align: center;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
-    @include respond-to(handhelds){grid-template-columns: 1fr 1fr};
+    @include respond-to(handhelds){grid-template-columns: 1fr 1fr;};
+    @include respond-to(narrow){grid-template-columns: 1fr}
     grid-gap: 2rem;
 
     .cocktail-menu__item{
@@ -36,8 +43,43 @@
                 
                 img{width: 200px;height:200px;max-height: 300px;object-fit: cover}
             }
-            
+
         }
         
+    }
+}
+.beer-container{text-align: center}
+.draft{
+    display:grid;list-style: none;grid-template-columns:1fr;grid-gap:2rem;
+    grid-auto-rows: auto;
+    .draft__item{
+        width:85%;
+        margin:auto;
+        display:grid;
+        grid-template-columns: auto auto 1fr;grid-gap: 2rem;
+        justify-items: center;
+        align-items: center;
+        .draft__item--left{text-align: left};
+        .draft__item--img{
+            height: 100px;width:100px;overflow: hidden;margin:0;
+            img{height:100%;width:auto;display:block;object-fit: cover;}
+        }
+        .draft__item--desc{flex-basis:50%;}
+    }
+}
+
+.bottle{
+    h2{font-size: 1rem}
+    width:85%;
+    margin:auto;
+    list-style-type: none;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-gap: 1rem;
+    .bottle__item{
+        .bottle__img-cont{width:50px;height:100px;
+            img{width:auto;height: 100%;object-fit: cover}
+        }
+    .bottle__desc{overflow: hidden;}
     }
 }

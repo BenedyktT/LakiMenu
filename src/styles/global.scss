@@ -60,11 +60,14 @@ body {
   }
   p,article {font-family:$font-sub;}
 }
-
+$break-narrow: 400px;
 $break-small: 792px;
 $break-large: 1024px;
 
 @mixin respond-to($media) {
+  @if $media == narrow {
+    @media only screen and (max-width: $break-narrow) { @content;}
+  }
   @if $media == handhelds {
     @media only screen and (max-width: $break-small) { @content; }
   }
