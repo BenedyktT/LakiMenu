@@ -174,7 +174,7 @@ let myLatLng = { lat: 63.773797, lng: -17.96303 }
 class Map {
   
     static loadGoogleMapsApi() {
-      return loadGoogleMapsApi({ key: 'AIzaSyCKJ8cmU4Ipmbah0eG6kNzgqR9GQGVEVNw'});
+      return loadGoogleMapsApi({ key: process.env.KEY });
     }
     static createMap(googleMaps, mapElement) {
       
@@ -199,6 +199,6 @@ class Map {
     
   }
   export { Map };
-
+console.log(process.env.KEY)
 
   
