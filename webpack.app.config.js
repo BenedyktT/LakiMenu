@@ -98,6 +98,6 @@ target: 'web',
         plugins: [
           imageminMozjpeg({quality: 50}),
           imageminWebp({autoFilter:true,resize:{width:600,height:0}})]
-      })     
+      })    
   ]
 };
