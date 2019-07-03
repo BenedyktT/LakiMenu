@@ -93,7 +93,7 @@ target: 'web',
         chunkFilename: "[id].css"
       }),
 
-            new ImageminPlugin({
+             new ImageminPlugin({
         pngquant: {quality: '40-50'},
         plugins: [
           imageminMozjpeg({quality: 50}),

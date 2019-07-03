@@ -130,6 +130,7 @@ svg:hover{fill: $theme-color}}
   .section__photos{
     height: 100%;
     .gallery__items{
+      position: relative;
       margin:0;
       padding:0;
       list-style: none;
@@ -143,7 +144,7 @@ svg:hover{fill: $theme-color}}
       
       .gallery__item{
         width: 100%;height: 100%;overflow: hidden;
-        img{display: block;width: 100%;height: 100%;object-fit: cover;object-position: bottom;min-width: 100%}
+        img{display: block;width: 100%;height: 100vh;object-fit: cover;object-position: bottom;min-width: 100%}
       }
       .gallery__item:nth-of-type(1){}
       .gallery__item:nth-of-type(2){grid-column: span 2 }
@@ -159,7 +160,11 @@ svg:hover{fill: $theme-color}}
       .gallery__item:nth-of-type(12){}
       .gallery__item:nth-of-type(13){}
       .gallery__item:nth-of-type(14){}
-      
+    };
+    .gallery__item{filter: grayscale(80%);transition: filter 750ms ease}
+    .gallery__item:hover{filter: none}
+    .gallery-active{
+      position: fixed;top:0;height: 100%;width: 100%;z-index:100
     }
   }
   .bar{
