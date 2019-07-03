@@ -46,3 +46,7 @@ const arrow = document.querySelector('.arrow')
 arrow.addEventListener('click',()=>{
     aboutSection.scrollIntoView({behavior:'smooth'})
 })
+
+
+
+
