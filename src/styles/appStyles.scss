@@ -135,7 +135,7 @@ svg:hover{fill: $theme-color}}
       list-style: none;
       height: 100%;
       display:grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
       grid-auto-rows: auto;
       overflow: hidden;
       grid-gap: 1rem;
@@ -188,4 +188,4 @@ svg:hover{fill: $theme-color}}
   overflow: hidden;
 }
 
-
+.img__overlay{display:none;span{float:right;cursor: pointer;}@include respond-to(handhelds){padding:0}padding:2rem;position: fixed;overflow: hidden;;height: 100vh;width: 100%;z-index:1000;background: rgba(0, 0, 0, 0.699);img{height: 100%;max-width: 100%;margin:auto;display:block;object-fit: contain}}

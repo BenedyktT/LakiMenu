@@ -50,3 +50,44 @@ arrow.addEventListener('click',()=>{
 
 
 
+const lightBox = document.querySelector('.img__overlay')
+const imgItem = document.querySelector('.img__overlay .gallery__item--img')
+const closeLightbox = document.querySelector('.close')
+const imageElement = document.querySelectorAll('.gallery__item img')
+
+
+
+closeLightbox.addEventListener('click',()=>{
+    lightBox.style.opacity= '0'
+    lightBox.style.display="none"
+})
+
+const changeImgHref = (imgNumber)=>{
+    if(imgNumber<=14){
+  imgItem.setAttribute('src',(imgItem.getAttribute('src').replace(/\d+/g,`${imgNumber}`)))
+} else {false}
+}
+
+
+imageElement.forEach((el)=>{
+    el.addEventListener('click',()=>{
+        let string = el.getAttribute('src')
+       let clickedImgNumber = string.substr(string.length-8,8)
+       clickedImgNumber=clickedImgNumber.match(/\d+/g).map(Number);
+       changeImgHref(clickedImgNumber[0])
+       lightBox.style.opacity= '1';
+       lightBox.style.display= "block"
+       let startPoint = clickedImgNumber[0]
+              document.querySelector('body').addEventListener('keydown',(e)=>{
+                  if(e.key==='ArrowRight'&&startPoint<=14){
+                      startPoint+=1
+           changeImgHref(startPoint)}
+                if(e.key==='ArrowLeft'&&startPoint>1){
+                    startPoint-=1
+                    changeImgHref(startPoint)
+                }
+    }) 
+    })
+
+    
+})

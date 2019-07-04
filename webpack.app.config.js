@@ -92,12 +92,12 @@ target: 'web',
         filename: "[name].css",
         chunkFilename: "[id].css"
       }),
-
+ 
             new ImageminPlugin({
         pngquant: {quality: '40-50'},
         plugins: [
           imageminMozjpeg({quality: 50}),
           imageminWebp({autoFilter:true,resize:{width:600,height:0}})]
-      })    
+      })     
   ]
 };
