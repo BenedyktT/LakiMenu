@@ -64,7 +64,7 @@ closeLightbox.addEventListener('click',()=>{
 
 const changeImgHref = (imgNumber)=>{
     if(imgNumber<=14){
-  imgItem.setAttribute('src',(imgItem.getAttribute('src').replace(/\d+(?=.jpg)/,`${imgNumber}`)))
+  imgItem.setAttribute('src',(imgItem.getAttribute('src').replace(/(\d+(?=.jpg))/g,`${imgNumber}`)))
 } else {false}
 }
 
