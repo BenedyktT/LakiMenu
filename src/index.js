@@ -36,7 +36,12 @@ AOS.init({
 
 
 const aboutNavLink = document.querySelector('.about-el')
+const galleryNavLink = document.querySelector('.gallery-el')
 aboutNavLink.addEventListener('click',()=>{
+    hamburger.classList.remove('active')
+    document.querySelector('.toggle-nav').classList.remove('toggle-nav__active')
+})
+galleryNavLink.addEventListener('click',()=>{
     hamburger.classList.remove('active')
     document.querySelector('.toggle-nav').classList.remove('toggle-nav__active')
 })
@@ -130,23 +135,35 @@ ticking = true
 }
 })
 
-/* const activeClassOnScroll = function(){
-    
-    console.log(starters.offsetTop)
-    console.log(document.querySelector('body').offsetTop)
-} */
-/* const starters = document.querySelector('#starters')
- 
-let divPos = starters.offsetTop
-let navelement = document.querySelectorAll('.side-navbar__item')
-/* window.addEventListener('scroll',activeClassOnScroll) */
 
-/* console.log(navelement)
- 
-window.addEventListener('scroll',()=>{
+
+const dateElement = document.querySelector('.date')
+
+let date = new Date().toISOString()
+
+let now = ()=>{
+    dateElement.value=date.slice(0,16)
+}
+now()
+
+
+let emailForm = document.querySelector('.emailform-container')
+let cta = document.querySelectorAll('.cta')
+let tick = false
+cta.forEach((e)=>{
+    e.addEventListener('click',()=>{
+        if(!tick){
+            emailForm.classList.add('active')
+            cta.classList.add('active')
+            cta.innerHTML='X'
+            tick = true
+        } else {
+            emailForm.classList.remove('active')
+            cta.classList.remove('active')
+            cta.innerHTML="Reservation";
+            tick=false
+        }
+    })
     
-    
-        
-    
-    
-}) */
+})
+

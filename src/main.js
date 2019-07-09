@@ -13,7 +13,7 @@ const testimonials = new Glide('.glide-testimonials',{
     startAt:0,
     perView:2,
     autoplay:false,
-    animationDuration: 1350,
+    animationDuration: 950,
     peek: {
         before: 50,
         after: 100
@@ -62,32 +62,11 @@ closeLightbox.addEventListener('click',()=>{
     lightBox.style.display="none"
 })
 
-const changeImgHref = (imgNumber)=>{
-    if(imgNumber<=14){
-  imgItem.setAttribute('src',(imgItem.getAttribute('src').replace(/(\d+(?=.jpg))/g,`${imgNumber}`)))
-} else {false}
-}
 
-
-imageElement.forEach((el)=>{
-    el.addEventListener('click',()=>{
-        let string = el.getAttribute('src')
-       let clickedImgNumber = string.substr(string.length-8,8)
-       clickedImgNumber=clickedImgNumber.match(/\d+/g).map(Number);
-       changeImgHref(clickedImgNumber[0])
-       lightBox.style.opacity= '1';
-       lightBox.style.display= "block"
-       let startPoint = clickedImgNumber[0]
-              document.querySelector('body').addEventListener('keydown',(e)=>{
-                  if(e.key==='ArrowRight'&&startPoint<=14){
-                      startPoint+=1
-           changeImgHref(startPoint)}
-                if(e.key==='ArrowLeft'&&startPoint>1){
-                    startPoint-=1
-                    changeImgHref(startPoint)
-                }
-    }) 
+imageElement.forEach((e)=>{
+    e.addEventListener('click',()=>{
+        imgItem.attributes.src.nodeValue=e.attributes.src.nodeValue
+        lightBox.style.display="block";
+        lightBox.style.opacity="1"
     })
-
-    
 })

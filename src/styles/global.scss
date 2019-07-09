@@ -63,8 +63,12 @@ body {
 $break-narrow: 400px;
 $break-small: 792px;
 $break-large: 1024px;
+$break-horizon:450px;
 
 @mixin respond-to($media) {
+  @if $media == horizon {
+    @media only screen and (max-height: $break-horizon) { @content;}
+  }
   @if $media == narrow {
     @media only screen and (max-width: $break-narrow) { @content;}
   }
@@ -114,13 +118,14 @@ nav {
     svg:hover{fill:$theme-color}
   }
   .sociallinks{@include respond-to(handhelds){display:none}}
-  
+  .cta.active{transform: scale(1.2)}
   .items-right{
     .toggle-nav__label{height: 50px;}
     display:flex;z-index:100;
     .cta {
+      transition: transform 1000ms ease-in;
       transition: opacity 350ms ease;
-      @include respond-to(handhelds){display:none}}}
+      @include respond-to(handhelds){display: none}}}
   .hamburger-container{
     margin:auto 0;
     height: 100%;
@@ -210,3 +215,44 @@ footer{
     .link:nth-child(2) img {width:150px};
   }
 }
+
+.emailform-container.active{
+  opacity:1;}
+.emailform-container{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  z-index: 99;
+  background: $bg-color;
+  opacity: 0;
+  transition: opacity 350ms ease;
+  .emailform{height: 100%;@include respond-to(horizon){width:100vw}}
+  .emailform__elements{
+    height: 100%;
+    list-style-type: none;
+    display:grid;
+    grid-template-columns: 1fr;
+    @include respond-to(horizon){grid-template-columns: 1fr 1fr;}
+    @include respond-to(handhelds){width:85%;grid-gap: 2rem;}
+    width:30%;
+    margin:7rem auto;
+    justify-items: center;
+    .emailform__element{
+
+      div{
+        display:inline-block;
+        @include respond-to(handhelds){display: none}
+      }
+      width:100%;
+      display:grid;
+      grid-gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+      @include respond-to(handhelds){grid-template-columns: 1fr}
+      justify-content: space-between
+    }
+    .form__element{align-self: center;justify-self: left;
+      @include respond-to(handhelds){width:100%}}
+    .emailform__submit{grid-column-start: 2;margin:1rem 0;
+      @include respond-to(horizon){position: absolute;bottom:0;right:3rem}}
+  }
+  }
