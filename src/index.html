@@ -15,13 +15,13 @@
                         <div class="emailform__title">
                             <p>First name:</p>
                         </div>
-                        <input type="text" class="form__element name" placeholder="Name">
+                        <input required maxlength="25" type="text" class="form__element name" placeholder="Name">
                     </li>
                     <li class="emailform__element">
                         <div class="emailform__title">
                             <p>Email:</p>
                         </div>
-                        <input type="text" class="form__element mail" placeholder="E-mail">
+                        <input required type="email" class="form__element mail" placeholder="E-mail">
                     </li>
                     <li class="emailform__element">
                         <div class="emailform__title">
@@ -33,9 +33,9 @@
                         <div class="emailform__title">
                             <p>Number of Guests:</p>
                         </div>
-                        <input type="text" class="form__element numberpax" placeholder="Number of Guest">
+                        <input type="number" class="form__element numberpax" placeholder="Number of Guest">
                     </li>
-                    <li class="emailform__element">
+                    <li class="emailform__element dateEl">
                         <div class="emailform__title">
                             <p>Date:</p>
                         </div>
@@ -45,9 +45,9 @@
                         <div class="emailform__title">
                             <p>Special request:</p>
                         </div>
-                        <textarea class="form__element" name="" id="" cols="30" rows="3" class="special" placeholder="Special requests"></textarea>
+                        <textarea class="form__element" name="" id="" cols="auto" rows="1" class="special" placeholder="Special requests"></textarea>
                     </li>
-                    <li class="emailform__element"><button class="emailform__submit btn" type="submit">Submit</button></li>
+                    <li class="emailform__element submitForm"><button class="emailform__submit btn" type="submit">Submit</button></li>
                 </ul>        
             </form>
         </div></div>
@@ -111,7 +111,7 @@
             </div>
             <div class="toggle-nav">
                 <ul class="toggle-nav__elements">
-                    <li class="toggle-nav__element"><a href="./reserve.html" class="btn">Reserve</a></li>
+                    <li class="toggle-nav__element reservation--index"><a class="nav__reserve" href="./reserve.html" class="btn">Reserve</a></li>
                     <li class="toggle-nav__element about-el"><a href="#to-about">about</a></li>
                     <li class="toggle-nav__element"><a href="./about.html">location</a></li>
                     <li class="toggle-nav__element"><a href="./menu.html">menu</a></li>
@@ -178,27 +178,27 @@
         <section    class="about">
             <div class="section__bg about__bg"></div>
             <div class="about__chef">
-                <div class="about__chef-container"><img src="./images/kelnerztalerzem.jpg" alt="" srcset=""></div> 
                 <h2>Our mission</h2>
                 <p>A little about us</p>
             </div>
             <div class="about__art" data-aos="zoom-in">Welcome to Gígur Restaurant. We hope that you will enjoy the food and the service. We have all been doing our best to prepare your arrival and we strive to meet your expectations. We take pride in offering you products from our local farmers.
                     Our mountain lamb is an organic production, bred in our national park in our highlands. Our experienced local farmers, Sigfús and Lilja</div>
         </section>
+        <section class="section menu">
+                <div class="section__bg menu__bg"></div>
+                <div class="menu__text">
+                    <h2 class="section__headline">See our Menu</h2>
+                   <button data-aos="zoom-in" onclick="window.location.href='./menu.html'" class="section__btn btn menu__btn">Menu</button>
+                </div> 
+                <div class="menu__img"></div>
+            </section>
         <section class="location section">
             <div class="location__bg"></div>
             <div class="bg--overlay"></div>
             <h2 class="section__headline">Visit Gígur Restaurant</h2>
            <button data-aos="zoom-in" onclick="window.location.href='./about.html'" class="section__btn btn location__btn"> Location</button>
         </section>
-        <section class="section menu">
-            <div class="section__bg menu__bg"></div>
-            <div class="menu__text">
-                <h2 class="section__headline">See our Menu</h2>
-               <button data-aos="zoom-in" onclick="window.location.href='./menu.html'" class="section__btn btn menu__btn">Menu</button>
-            </div> 
-            <div class="menu__img"></div>
-        </section>
+      
         <section class="section testimonials">
             <div class="section__bg testimonials__bg"></div>
             <div class="testimonials__text">

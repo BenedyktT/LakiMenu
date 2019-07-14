@@ -66,11 +66,11 @@
                     </div>
                     <div class="toggle-nav">
                         <ul class="toggle-nav__elements">
-                            <li class="toggle-nav__element"><a href="./index.html" class="">Home</a></li>
-                            <li class="toggle-nav__element about-el"><a href="./index.html#to-about">about</a></li>
+                            <li class="toggle-nav__element reservation--index"><a class="nav__reserve" href="./reserve.html" class="btn">Reserve</a></li>
+                            <li class="toggle-nav__element about-el"><a href="#to-about">about</a></li>
                             <li class="toggle-nav__element"><a href="./about.html">location</a></li>
                             <li class="toggle-nav__element"><a href="./menu.html">menu</a></li>
-                            <li class="toggle-nav__element"><a href="./index.html#to-gallery">gallery</a></li>
+                            <li class="toggle-nav__element gallery-el"><a href="#to-gallery">gallery</a></li>
                             <li class="toggle-nav__element"><a href="./cocktails.html">cocktails</a></li>
                             <ul class="toggle-nav__social-links">
                                 <li>
@@ -124,48 +124,48 @@
                     
                 </nav>
     </header>
-        <div style="opacity: 1" class="emailform-container"><div class="emailform">
-                <form class="emailform__form">
-                    <ul class="emailform__elements">
-                        <li class="emailform__element">
-                            <div class="emailform__title">
-                                <p>First name:</p>
-                            </div>
-                            <input type="text" class="form__element name" placeholder="Name">
-                        </li>
-                        <li class="emailform__element">
-                            <div class="emailform__title">
-                                <p>Email:</p>
-                            </div>
-                            <input type="text" class="form__element mail" placeholder="E-mail">
-                        </li>
-                        <li class="emailform__element">
-                            <div class="emailform__title">
-                                <p>Phone:</p>
-                            </div>
-                            <input type="text" class="form__element phone" placeholder="Phone">
-                        </li>
-                        <li class="emailform__element">
-                            <div class="emailform__title">
-                                <p>Number of Guests:</p>
-                            </div>
-                            <input type="text" class="form__element numberpax" placeholder="Number of Guest">
-                        </li>
-                        <li class="emailform__element">
-                            <div class="emailform__title">
-                                <p>Date:</p>
-                            </div>
-                            <input type="datetime-local" value="" class="form__element date">
-                        </li>
-                        <li class="emailform__element">
-                            <div class="emailform__title">
-                                <p>Special request:</p>
-                            </div>
-                            <textarea class="form__element" name="" id="" cols="30" rows="3" class="special" placeholder="Special requests"></textarea>
-                        </li>
-                        <li class="emailform__element"><button class="emailform__submit btn" type="submit">Submit</button></li>
-                    </ul>        
-                </form>
-            </div></div>
+    <div style="opacity: 1" class="emailform-container"><div class="emailform">
+            <form class="emailform__form">
+                <ul class="emailform__elements">
+                    <li class="emailform__element">
+                        <div class="emailform__title">
+                            <p>First name:</p>
+                        </div>
+                        <input required maxlength="25" type="text" class="form__element name" placeholder="Name">
+                    </li>
+                    <li class="emailform__element">
+                        <div class="emailform__title">
+                            <p>Email:</p>
+                        </div>
+                        <input required type="email" class="form__element mail" placeholder="E-mail">
+                    </li>
+                    <li class="emailform__element">
+                        <div class="emailform__title">
+                            <p>Phone:</p>
+                        </div>
+                        <input type="text" class="form__element phone" placeholder="Phone">
+                    </li>
+                    <li class="emailform__element">
+                        <div class="emailform__title">
+                            <p>Number of Guests:</p>
+                        </div>
+                        <input type="number" class="form__element numberpax" placeholder="Number of Guest">
+                    </li>
+                    <li class="emailform__element dateEl">
+                        <div class="emailform__title">
+                            <p>Date:</p>
+                        </div>
+                        <input type="datetime-local" value="" class="form__element date">
+                    </li>
+                    <li class="emailform__element">
+                        <div class="emailform__title">
+                            <p>Special request:</p>
+                        </div>
+                        <textarea class="form__element" name="" id="" cols="auto" rows="1" class="special" placeholder="Special requests"></textarea>
+                    </li>
+                    <li class="emailform__element submitForm"><button class="emailform__submit btn" type="submit">Submit</button></li>
+                </ul>        
+            </form>
+        </div></div>
 </body>
 </html>

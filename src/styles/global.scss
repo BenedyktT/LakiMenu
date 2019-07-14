@@ -102,12 +102,10 @@ nav {
   img:nth-of-type(1){width:90px;object-fit: contain;transition: transform 1450ms ease}
   img:nth-of-type(2){width: calc(100% - 60px);object-fit: contain;transition: transform 550ms ease}}
   .brand img{
-    
     z-index:100;
     cursor:pointer;
     @include respond-to(handhelds) {width:100px;min-width: 25px}
   }
-
   .sociallinks,.toggle-nav__social-links{
     transition: opacity 150ms ease;
     padding:0;
@@ -118,7 +116,11 @@ nav {
     svg:hover{fill:$theme-color}
   }
   .sociallinks{@include respond-to(handhelds){display:none}}
-  .cta.active{transform: scale(1.2)}
+  @keyframes pulse {
+    from{transform: scale(0.8)}
+    to{transform: scale(1)}
+  };
+  .cta.active{animation: 700ms infinite alternate pulse;}
   .items-right{
     .toggle-nav__label{height: 50px;}
     display:flex;z-index:100;
@@ -191,12 +193,13 @@ nav {
   margin:auto;
   bottom:0;
   top:90%;
+  z-index:100;
+  animation: 700ms infinite alternate pulse;
   *{width:50px;height:50px;z-index:1; fill: white; margin:auto;transition:transform 350ms ease}
   &:hover svg{
     transform:scale(1.4)
   }
 }
-
 .nav__scroll {
   .cta {opacity:0}
   .sociallinks{transform:scale(0)}
@@ -232,7 +235,7 @@ footer{
     list-style-type: none;
     display:grid;
     grid-template-columns: 1fr;
-    @include respond-to(horizon){grid-template-columns: 1fr 1fr;}
+    @include respond-to(horizon){grid-template-columns: 1fr 1fr;width:100%}
     @include respond-to(handhelds){width:85%;grid-gap: 2rem;}
     width:30%;
     margin:7rem auto;
@@ -253,6 +256,6 @@ footer{
     .form__element{align-self: center;justify-self: left;
       @include respond-to(handhelds){width:100%}}
     .emailform__submit{grid-column-start: 2;margin:1rem 0;
-      @include respond-to(horizon){position: absolute;bottom:0;right:3rem}}
+      @include respond-to(horizon){margin:0}}
   }
   }

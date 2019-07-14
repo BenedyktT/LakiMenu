@@ -45,17 +45,15 @@ galleryNavLink.addEventListener('click',()=>{
     hamburger.classList.remove('active')
     document.querySelector('.toggle-nav').classList.remove('toggle-nav__active')
 })
-
+const reserveNavEl = document.querySelector('.nav__reserve')
 const navbar = document.querySelector('.nav')
 let last_known_scroll_position = 0;
 let ticking = false
 const transformNavbar = (scroll) => {
     if(scroll>100){
-        
         navbar.classList.add('nav__scroll')
     } else {
         navbar.classList.remove('nav__scroll')
-        
     }
 }
 
@@ -143,9 +141,30 @@ let date = new Date().toISOString()
 
 let now = ()=>{
     dateElement.value=date.slice(0,16)
+    dateElement.style.color=""
 }
 now()
-
+let error = document.createElement('p')
+const showWarning= ()=>{
+    let form = document.querySelector('.emailform__elements')
+        
+        error.classList.add('errorMsg')
+        error.textContent='Restaurant is open 12-22, Last reservation is available til 21.30'
+        dateElement.style.border="2px solid red"
+        form.appendChild(error)
+}
+const submit = document.querySelector('.emailform__submit')
+submit.addEventListener('click',()=>{
+    let inputDate = dateElement.value.split("T")
+    let inputHour =inputDate[1].split(":")[0]
+    let inputMinute = inputDate[1].split(":")[1]
+    if(inputHour>=12&&((inputHour<21)||(inputHour<22&&inputMinute<30))){
+       dateElement.style.border="none" 
+    } else {
+        error.textContent=""
+        showWarning()
+    }
+})
 
 let emailForm = document.querySelector('.emailform-container')
 let cta = document.querySelectorAll('.cta')
@@ -154,14 +173,16 @@ cta.forEach((e)=>{
     e.addEventListener('click',()=>{
         if(!tick){
             emailForm.classList.add('active')
-            cta.classList.add('active')
-            cta.innerHTML='X'
+            e.classList.add('active')
+            e.innerHTML='cancel'
             tick = true
+            document.querySelector('.arrow').style.display="none"
         } else {
             emailForm.classList.remove('active')
-            cta.classList.remove('active')
-            cta.innerHTML="Reservation";
+            e.classList.remove('active')
+            e.innerHTML="Reservation";
             tick=false
+            document.querySelector('.arrow').style.display="inherit"
         }
     })
     
