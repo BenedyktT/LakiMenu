@@ -176,15 +176,15 @@ cta.forEach((e)=>{
             e.classList.add('active')
             e.innerHTML='cancel'
             tick = true
-            document.querySelector('.arrow').style.display="none"
         } else {
             emailForm.classList.remove('active')
             e.classList.remove('active')
             e.innerHTML="Reservation";
             tick=false
-            document.querySelector('.arrow').style.display="inherit"
+
         }
     })
     
 })
 
+//////////////

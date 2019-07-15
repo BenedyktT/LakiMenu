@@ -63,10 +63,50 @@ closeLightbox.addEventListener('click',()=>{
 })
 
 
+
+
 imageElement.forEach((e)=>{
     e.addEventListener('click',()=>{
         imgItem.attributes.src.nodeValue=e.attributes.src.nodeValue
         lightBox.style.display="block";
         lightBox.style.opacity="1"
+        let currentElement = e.classList[1].split('_')[1]
+        document.querySelector('body').addEventListener('keydown',(ev)=>{
+           if(ev.key==="ArrowLeft"&&currentElement>1){
+                currentElement-=1
+               imgItem.attributes.src.nodeValue= imgItem.attributes.src.nodeValue.replace(/\d+(?=.jpg)/,currentElement)
+           }
+            if(ev.key==="ArrowRight"&&currentElement<14){
+            currentElement=Number(currentElement)+1
+             imgItem.attributes.src.nodeValue= imgItem.attributes.src.nodeValue.replace(/\d+(?=.jpg)/,currentElement)
+           } 
+        })
+        const lightboxControls = document.querySelectorAll('.lightbox__controls')
+        lightboxControls.forEach((event)=>{
+            event.addEventListener('click',()=>{
+                if(event.classList.contains('left')){
+                    if(currentElement>1){
+                        currentElement-=1
+                       imgItem.attributes.src.nodeValue= imgItem.attributes.src.nodeValue.replace(/\d+(?=.jpg)/,currentElement)
+                   }
+                }
+                if(event.classList.contains('right')){
+                    if(currentElement<14){
+                        currentElement=Number(currentElement)+1
+                         imgItem.attributes.src.nodeValue= imgItem.attributes.src.nodeValue.replace(/\d+(?=.jpg)/,currentElement)
+                       } 
+                }
+            })
+            
+        })
     })
 })
+if(lightBox.style.display==="block"){
+   
+}
+
+
+
+
+
+  

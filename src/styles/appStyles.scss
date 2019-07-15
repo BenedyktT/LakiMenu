@@ -191,4 +191,17 @@ svg:hover{fill: $theme-color}}
   overflow: hidden;
 }
 
-.img__overlay{display:none;span{float:right;cursor: pointer;}@include respond-to(handhelds){padding:0}padding:2rem;position: fixed;overflow: hidden;;height: 100vh;width: 100%;z-index:1000;background: rgba(0, 0, 0, 0.699);img{height: 100%;max-width: 100%;margin:auto;display:block;object-fit: contain}}
+.img__overlay{position:relative;display:none;span{float:right;cursor: pointer;}@include respond-to(handhelds){padding:0}padding:2rem;position: fixed;overflow: hidden;;height: 100vh;width: 100%;z-index:1000;background: rgba(0, 0, 0, 0.699);img{height: 100%;max-width: 100%;margin:auto;display:block;object-fit: contain}}
+.lightbox__controls{font-size: 3rem;
+position:absolute;
+top:50%;
+z-index:100;
+&.left{
+  left:3rem;
+  @include respond-to(handhelds){left:0}
+}&.right{right:3rem;@include respond-to(handhelds){right:0}}}
+
+
+
+
+/////////////////////////////

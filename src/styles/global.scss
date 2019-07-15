@@ -220,9 +220,10 @@ footer{
 }
 
 .emailform-container.active{
-  opacity:1;}
+  opacity:1;
+display:block}
 .emailform-container{
-  @include respond-to(handhelds){z-index:-1}
+  display:none;
   width:100%;
   height: 100%;
   position: absolute;
