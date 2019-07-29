@@ -205,18 +205,15 @@ form.addEventListener('submit', e => {
     body: new URLSearchParams(formData).toString()
   })
   .then(res => {
-
     if (res) {
-        document.querySelector('.form-send').display="flex"
-        setTimeout(() => {
-            document.querySelector('.form-send').textContent="Redirecting to home page"
-        }, 4000);
-        setTimeout(() => {
-            document.querySelector('.form-send').display="none"
-            document.location.href="/";
-        }, 1000);
-        
-    }
-
+        document.querySelector('.form-send').display="block"
+    setTimeout(() => {
+                document.querySelector('.form-send').textContent="Redirecting to home page"
+            }, 1000);
+    setTimeout(() => {
+                document.querySelector('.form-send').display="none"
+                document.location.href="/";
+            }, 2000);
+        }
   });
 });

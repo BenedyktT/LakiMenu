@@ -26,7 +26,7 @@ header{
   }
 }
 
-.form-send{text-align:center;width:100%;position:fixed;top:0;z-index:1000;background:darkgreen;color:$theme-color;}
+.form-send{text-align:center;width:100%;display:none;position:fixed;top:0;z-index:1000;background:darkgreen;color:$theme-color;}
 main{
   .about{
     margin:6rem 0;
