@@ -192,7 +192,7 @@ cta.forEach((e)=>{
 //email handler
 
 let form = document.querySelector(".emailform__form");
-      
+const formel = document.querySelector('.form-send')
 form.addEventListener('submit', e => {
   e.preventDefault();
   const formData = new FormData(form);
@@ -206,14 +206,14 @@ form.addEventListener('submit', e => {
   })
   .then(res => {
     if (res) {
-        document.querySelector('.form-send').display="block"
+        document.querySelector('.form-send').style.display="block"
     setTimeout(() => {
-                document.querySelector('.form-send').textContent="Redirecting to home page"
-            }, 1000);
+                formel.textContent="Redirecting to home page"
+            }, 5000);
     setTimeout(() => {
-                document.querySelector('.form-send').display="none"
+                document.querySelector('.form-send').style.display="none"
                 document.location.href="/";
-            }, 2000);
+            }, 5000);
         }
   });
 });
