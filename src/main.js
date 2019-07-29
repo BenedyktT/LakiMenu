@@ -53,7 +53,7 @@ arrow.addEventListener('click',()=>{
 const lightBox = document.querySelector('.img__overlay')
 const imgItem = document.querySelector('.img__overlay .gallery__item--img')
 const closeLightbox = document.querySelector('.close')
-const imageElement = document.querySelectorAll('.gallery__item img')
+const imageElement = document.querySelectorAll('.gallery__item--img')
 
 
 
@@ -65,45 +65,54 @@ closeLightbox.addEventListener('click',()=>{
 
 
 
-imageElement.forEach((e)=>{
-    e.addEventListener('click',()=>{
-        imgItem.attributes.src.nodeValue=e.attributes.src.nodeValue
+for(let i=0;i<imageElement.length;i++){
+    imageElement[i].addEventListener('click',()=>{
+        imgItem.src=imageElement[i].src
         lightBox.style.display="block";
         lightBox.style.opacity="1"
-        let currentElement = e.classList[1].split('_')[1]
-        document.querySelector('body').addEventListener('keydown',(ev)=>{
-           if(ev.key==="ArrowLeft"&&currentElement>1){
-                currentElement-=1
-               imgItem.attributes.src.nodeValue= imgItem.attributes.src.nodeValue.replace(/\d+(?=.jpg)/,currentElement)
-           }
-            if(ev.key==="ArrowRight"&&currentElement<14){
-            currentElement=Number(currentElement)+1
-             imgItem.attributes.src.nodeValue= imgItem.attributes.src.nodeValue.replace(/\d+(?=.jpg)/,currentElement)
-           } 
-        })
+        let current = i
         const lightboxControls = document.querySelectorAll('.lightbox__controls')
         lightboxControls.forEach((event)=>{
             event.addEventListener('click',()=>{
                 if(event.classList.contains('left')){
-                    if(currentElement>1){
-                        currentElement-=1
-                       imgItem.attributes.src.nodeValue= imgItem.attributes.src.nodeValue.replace(/\d+(?=.jpg)/,currentElement)
-                   }
+                    if(current>0){
+                        imgItem.src=imageElement[current--].src
+                    }
                 }
                 if(event.classList.contains('right')){
-                    if(currentElement<14){
-                        currentElement=Number(currentElement)+1
-                         imgItem.attributes.src.nodeValue= imgItem.attributes.src.nodeValue.replace(/\d+(?=.jpg)/,currentElement)
-                       } 
+                    if(current<14){
+                        imgItem.src=imageElement[current++].src
+                    }
+                }
+            }
+            )
+        }
+        )
+    })    
+}
+ /* imageElement.forEach((e)=>{
+    e.addEventListener('click',()=>{
+        imgItem.src=e.src
+        lightBox.style.display="block";
+        lightBox.style.opacity="1"
+        let currentElement = e.classList[1]
+        const lightboxControls = document.querySelectorAll('.lightbox__controls')
+        lightboxControls.forEach((event)=>{
+            event.addEventListener('click',()=>{
+                if(event.classList.contains('left')){
+                    console.log(currentElement)
+                    console.log(currentElement.split('_')[1])
+                }
+                if(event.classList.contains('right')){
                 }
             })
             
         })
     })
-})
+}) 
 if(lightBox.style.display==="block"){
    
-}
+} */
 
 
 
