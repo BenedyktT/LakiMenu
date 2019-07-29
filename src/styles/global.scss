@@ -247,7 +247,7 @@ display:block}
         display:inline-block;
         @include respond-to(handhelds){display: none};
       }
-      .centered{grid-column-start: span 2}
+      div.centered{grid-column-start: span 2;display:block}
       width:100%;
       display:grid;
       grid-gap: 1rem;
