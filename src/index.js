@@ -206,12 +206,15 @@ form.addEventListener('submit', e => {
   })
   .then(res => {
     if (res) {
-        document.querySelector('.form-send').style.display="block"
+        formel.style.display="block"
+        console.log('display block')
     setTimeout(() => {
                 formel.textContent="Redirecting to home page"
+                console.log('redirecting')
             }, 5000);
     setTimeout(() => {
-                document.querySelector('.form-send').style.display="none"
+                formel.style.display="none"
+                console.log('display none')
                 document.location.href="/";
             }, 5000);
         }
