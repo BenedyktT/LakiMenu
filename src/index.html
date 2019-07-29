@@ -7,6 +7,7 @@
     <title>Hotel Laki Menu</title>
 </head>
 <body>
+        <div class="form-send">Your reservation submission has been send</div>
         <div class="img__overlay"><span class="lightbox__controls left">&#8606;</span> <span class="lightbox__controls right">&#8608;</span><span class="close">X</span> <img src="./images/gallery/img1.jpg" alt="" class="gallery__item--img"></div></div>
         <div class="emailform-container"><div class="emailform">
             <form name="contact" method="POST"  data-netlify="true" class="emailform__form">
@@ -47,6 +48,10 @@
                         </div>
                         <textarea name="special" class="form__element" name="" id="" cols="auto" rows="1" class="special" placeholder="Special requests"></textarea>
                     </li>
+                    <li class="emailform__element">
+                        <div data-netlify-recaptcha="true"></div>
+                    </li>
+
                     <li class="emailform__element submitForm"><button class="emailform__submit btn" type="submit">Submit</button></li>
                 </ul>        
             </form>
