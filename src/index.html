@@ -9,43 +9,43 @@
 <body>
         <div class="img__overlay"><span class="lightbox__controls left">&#8606;</span> <span class="lightbox__controls right">&#8608;</span><span class="close">X</span> <img src="./images/gallery/img1.jpg" alt="" class="gallery__item--img"></div></div>
         <div class="emailform-container"><div class="emailform">
-            <form name="contact" method="POST" action="/#contact" data-netlify="true" class="emailform__form">
+            <form name="contact" method="POST"  data-netlify="true" class="emailform__form">
                 <ul class="emailform__elements">
                     <li class="emailform__element">
                         <div class="emailform__title">
                             <p>First name:</p>
                         </div>
-                        <input required maxlength="25" type="text" class="form__element name" placeholder="Name">
+                        <input name="name" required maxlength="25" type="text" class="form__element name" placeholder="Name">
                     </li>
                     <li class="emailform__element">
                         <div class="emailform__title">
                             <p>Email:</p>
                         </div>
-                        <input required type="email" class="form__element mail" placeholder="E-mail">
+                        <input name="email" required type="email" class="form__element mail" placeholder="E-mail">
                     </li>
                     <li class="emailform__element">
                         <div class="emailform__title">
                             <p>Phone:</p>
                         </div>
-                        <input type="text" class="form__element phone" placeholder="Phone">
+                        <input name="phone" type="text" class="form__element phone" placeholder="Phone">
                     </li>
                     <li class="emailform__element">
                         <div class="emailform__title">
                             <p>Number of Guests:</p>
                         </div>
-                        <input type="number" class="form__element numberpax" placeholder="Number of Guest">
+                        <input name="no" type="number" class="form__element numberpax" placeholder="Number of Guest">
                     </li>
                     <li class="emailform__element dateEl">
                         <div class="emailform__title">
                             <p>Date:</p>
                         </div>
-                        <input type="datetime-local" value="" class="form__element date">
+                        <input name="date" type="datetime-local" value="" class="form__element date">
                     </li>
                     <li class="emailform__element">
                         <div class="emailform__title">
                             <p>Special request:</p>
                         </div>
-                        <textarea class="form__element" name="" id="" cols="auto" rows="1" class="special" placeholder="Special requests"></textarea>
+                        <textarea name="special" class="form__element" name="" id="" cols="auto" rows="1" class="special" placeholder="Special requests"></textarea>
                     </li>
                     <li class="emailform__element submitForm"><button class="emailform__submit btn" type="submit">Submit</button></li>
                 </ul>        
