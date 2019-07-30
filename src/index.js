@@ -135,88 +135,16 @@ ticking = true
 
 
 
-const dateElement = document.querySelector('.date')
-
-let date = new Date().toISOString()
-
-let now = ()=>{
-    dateElement.value=date.slice(0,16)
-    dateElement.style.color=""
-}
-now()
-let error = document.createElement('p')
-const showWarning= ()=>{
-    let form = document.querySelector('.emailform__elements')
-        
-        error.classList.add('errorMsg')
-        error.textContent='Restaurant is open 12-22, Last reservation is available til 21.30'
-        dateElement.style.border="2px solid red"
-        form.appendChild(error)
-}
-const submit = document.querySelector('.emailform__submit')
-submit.addEventListener('click',()=>{
-    let inputDate = dateElement.value.split("T")
-    let inputHour =inputDate[1].split(":")[0]
-    let inputMinute = inputDate[1].split(":")[1]
-    if(inputHour>=12&&((inputHour<21)||(inputHour<22&&inputMinute<30))){
-       dateElement.style.border="none" 
-    } else {
-        error.textContent=""
-        showWarning()
-    }
-})
 
 let emailForm = document.querySelector('.emailform-container')
 let cta = document.querySelectorAll('.cta')
 let tick = false
 cta.forEach((e)=>{
     e.addEventListener('click',()=>{
-        if(!tick){
-            emailForm.classList.add('active')
-            e.classList.add('active')
-            e.innerHTML='cancel'
-            tick = true
-        } else {
-            emailForm.classList.remove('active')
-            e.classList.remove('active')
-            e.innerHTML="Reservation";
-            tick=false
-
-        }
+        window.location.assign('./reserve.html')
+        console.log('changing location')
+         
     })
     
 })
 
-//////////////
-
-//email handler
-
-let form = document.querySelector(".emailform__form");
-const formel = document.querySelector('.form-send')
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const formData = new FormData(form);
-  fetch(form.getAttribute('action'), {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    },
-    body: new URLSearchParams(formData).toString()
-  })
-  .then(res => {
-    if (res) {
-        formel.style.display="block"
-        console.log('display block')
-    setTimeout(() => {
-                formel.textContent="Redirecting to home page"
-                console.log('redirecting')
-            }, 5000);
-    setTimeout(() => {
-                formel.style.display="none"
-                console.log('display none')
-                document.location.href="/";
-            }, 5000);
-        }
-  });
-});

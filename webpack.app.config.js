@@ -11,6 +11,7 @@ module.exports = {
     index: './src/index.js',
     main: './src/main.js',
     about: './src/about.js', 
+    reserve: './src/reserve.js'
 },
 output: {
   filename: '[chunkhash].bundle.js'
@@ -91,7 +92,7 @@ target: 'web',
     new HtmlWebPackPlugin({
       template: "./src/reserve.html",
       filename: "./reserve.html",
-      chunks: ['index'],
+      chunks: ['index','reserve'],
       
     }),
 
@@ -100,8 +101,8 @@ target: 'web',
         chunkFilename: "[id].css"
       }),
   
-                     new ImageminPlugin({
-        pngquant: {quality: '40-50'},
+                      new ImageminPlugin({
+        pngquant: {quality: '50-60'},
         plugins: [
           imageminMozjpeg({quality: 50}),
           imageminWebp({autoFilter:true,resize:{width:600,height:0}})]

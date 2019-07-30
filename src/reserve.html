@@ -67,11 +67,11 @@
                     </div>
                     <div class="toggle-nav">
                         <ul class="toggle-nav__elements">
-                            <li class="toggle-nav__element reservation--index"><a class="nav__reserve" href="./reserve.html" class="btn">Reserve</a></li>
+                            <li class="toggle-nav__element reservation--index"><a class="nav__reserve" href="/" class="btn">Home</a></li>
                             <li class="toggle-nav__element about-el"><a href="#to-about">about</a></li>
                             <li class="toggle-nav__element"><a href="./about.html">location</a></li>
                             <li class="toggle-nav__element"><a href="./menu.html">menu</a></li>
-                            <li class="toggle-nav__element gallery-el"><a href="#to-gallery">gallery</a></li>
+                            <li class="toggle-nav__element gallery-el"><a href="./index.html#to-gallery">gallery</a></li>
                             <li class="toggle-nav__element"><a href="./cocktails.html">cocktails</a></li>
                             <ul class="toggle-nav__social-links">
                                 <li>
@@ -125,7 +125,7 @@
                     
                 </nav>
     </header>
-    <div style="opacity: 1 !important; display: block" class="emailform-container subpage"><div class="emailform">
+    <div style="opacity: 1 !important; display: block;min-height: 100%" class="emailform-container subpage"><div class="emailform">
             <form name="contact" method="POST"  data-netlify="true" class="emailform__form">
                     <ul class="emailform__elements">
                         <li class="emailform__element">
@@ -156,8 +156,15 @@
                             <div class="emailform__title">
                                 <p>Date:</p>
                             </div>
-                            <input name="date" type="datetime-local" value="" class="form__element date">
+                            <input name="date" type="date" value="" class="form__element date">
                         </li>
+                        <li class="emailform__element dateEl">
+                                <div class="emailform__title">
+                                    <p>Time:</p>
+                                </div>
+                                <input type="time" name="time" class="form__element time">
+                            </li>
+                        
                         <li class="emailform__element">
                             <div class="emailform__title">
                                 <p>Special request:</p>

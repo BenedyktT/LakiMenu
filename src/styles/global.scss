@@ -219,6 +219,15 @@ footer{
   }
 }
 
+.overlay{
+  background: $bg-color;
+  display:block;
+  height:100%;
+  width:100%;
+  position:absolute;
+  z-index:-100
+}
+.emailform-container
 .emailform-container.active{
   opacity:1;
 display:block}
@@ -231,18 +240,20 @@ display:block}
   background: $bg-color;
   opacity: 0;
   transition: opacity 350ms ease;
-  .emailform{height: 100%;@include respond-to(horizon){width:100vw}}
+  .emailform{height: 100%;@include respond-to(horizon){width:100%}}
   .emailform__elements{
     height: 100%;
     list-style-type: none;
     display:grid;
+    align-items: center;
     grid-template-columns: 1fr;
-    @include respond-to(horizon){grid-template-columns: 1fr 1fr;width:100%}
+    @include respond-to(horizon){}
     @include respond-to(handhelds){width:85%;grid-gap: 2rem;}
     width:30%;
     margin:7rem auto;
     justify-items: center;
     .emailform__element{
+      height: 50px;
       div{
         display:inline-block;
         @include respond-to(handhelds){display: none};
