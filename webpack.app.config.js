@@ -104,7 +104,7 @@ target: 'web',
                       new ImageminPlugin({
         pngquant: {quality: '50-60'},
         plugins: [
-          imageminMozjpeg({quality: 50}),
+          imageminMozjpeg({progressive:false,quality: 50}),
           imageminWebp({autoFilter:true,resize:{width:600,height:0}})]
       })        
   ]
