@@ -105,7 +105,7 @@ target: 'web',
         pngquant: {quality: '50-60'},
         plugins: [
           imageminMozjpeg({progressive:true,quality: 50}),
-           imageminWebp({resize:{width:980,height:0,lossless:true,metadata:'all'}}) ]
+          /* imageminWebp({autoFilter:true,resize:{width:800,height:0}}) */]
       })        
   ]
 };
