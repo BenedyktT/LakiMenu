@@ -101,11 +101,11 @@ target: 'web',
         chunkFilename: "[id].css"
       }),
   
-                      new ImageminPlugin({
+/*                       new ImageminPlugin({
         pngquant: {quality: '50-60'},
         plugins: [
-          imageminMozjpeg({progressive:false,quality: 50}),
-          imageminWebp({autoFilter:true,resize:{width:600,height:0}})]
-      })        
+          imageminMozjpeg({progressive:true,quality: 50}),
+          imageminWebp({autoFilter:true,resize:{width:800,height:0}})]
+      })  */       
   ]
 };
