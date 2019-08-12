@@ -1,6 +1,5 @@
 const path = require('path');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-/* const CopyWebpackPlugin = require('copy-webpack-plugin'); */
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const imageminMozjpeg = require('imagemin-mozjpeg');
@@ -43,6 +42,14 @@ target: 'web',
              options: {
                  name:'[name].[ext]',
                  outputPath: 'assets/img',
+             }
+           },
+           {
+             loader:"image-maxsize-webpack-loader",
+             options: {
+               "max-width":1024,
+               "max-height":768,
+               "useImageMagick":false
              }
            }
          ]
@@ -105,7 +112,7 @@ target: 'web',
         pngquant: {quality: '50-60'},
         plugins: [
           imageminMozjpeg({progressive:true,quality: 50}),
-           imageminWebp({autoFilter:true,resize:{width:1000,height:-1}}) ]
+           imageminWebp({autoFilter:true}) ]
       })          
   ]
 };
