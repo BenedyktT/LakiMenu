@@ -36,7 +36,7 @@ target: 'web',
         ]
       },
              {
-         test: /\.(png|svg|jpg|gif)$/,
+         test: /\.(png|svg|jpg|gif|jpeg)$/,
          use: [
            {
              loader: 'file-loader',
@@ -101,11 +101,11 @@ target: 'web',
         chunkFilename: "[id].css"
       }),
   
-                      new ImageminPlugin({
+                        new ImageminPlugin({
         pngquant: {quality: '50-60'},
         plugins: [
           imageminMozjpeg({progressive:true,quality: 50}),
-          /* imageminWebp({autoFilter:true,resize:{width:800,height:0}}) */]
-      })        
+           imageminWebp({autoFilter:true,resize:{width:1000,height:-1}}) ]
+      })          
   ]
 };

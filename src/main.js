@@ -5,7 +5,11 @@ import './styles/appStyles.scss';
 
 
 
-  
+window.addEventListener('load',(e)=>{
+    const loader = document.querySelector('.loader')
+    const loaderImg = document.querySelector('.loader-box')
+    loader.classList.add('loader__fade')
+})
 const testimonials = new Glide('.glide-testimonials',{
     type:"carousel",
     hoverpause: false,
