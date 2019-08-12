@@ -126,7 +126,7 @@
                 </nav>
     </header>
     <div style="opacity: 1 !important; display: block;min-height: 100%" class="emailform-container subpage"><div class="emailform">
-            <form name="contact" method="POST"  data-netlify="true" class="emailform__form">
+            <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="emailform__form">
                     <ul class="emailform__elements">
                         <li class="emailform__element">
                             <div class="emailform__title">
@@ -171,11 +171,8 @@
                             </div>
                             <textarea name="special" class="form__element" name="" id="" cols="auto" rows="1" class="special" placeholder="Special requests"></textarea>
                         </li>
-                        <li class="emailform__element">
-                            <div class="centered" data-netlify-recaptcha="true"></div>
-                        </li>
-    
                         <li class="emailform__element submitForm"><button class="emailform__submit btn" type="submit">Submit</button></li>
+                        <li class="hidden"><input name="bot-field"/></li>
                     </ul>        
                 </form>
         </div></div>
