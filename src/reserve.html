@@ -378,7 +378,7 @@
                 </nav>
     </header>
     <div style="opacity: 1 !important; display: block;min-height: 100%" class="emailform-container subpage"><div class="emailform">
-            <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="emailform__form" action="/success.html">
+            <form action="/success" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="emailform__form" >
                     <ul class="emailform__elements">
                         <li class="emailform__element">
                             <div class="emailform__title">
@@ -426,7 +426,7 @@
                                 <div class="emailform__title">
                                     <p>Time:</p>
                                 </div>
-                                <input type="time" name="time" class="form__element time">
+                                <input min="13:00" max="21:30" required type="time" name="time" class="form__element time">
                             </li>
                         
                         <li class="emailform__element">
