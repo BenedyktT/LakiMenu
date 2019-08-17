@@ -29,6 +29,12 @@ submit.addEventListener('click',(e)=>{
     }
 }) 
 
+const formSubmit = document.querySelector(".emailform__form")
+formSubmit.addEventListener("submit",(e)=>{
+    console.log(e.target)
+    
+})
+
 //////////////
 
 //email handler

@@ -247,6 +247,7 @@ display:block}
     display:grid;
     align-items: center;
     grid-template-columns: 1fr;
+    grid-gap: 1rem;
     @include respond-to(horizon){}
     @include respond-to(handhelds){width:85%;grid-gap: 2rem;}
     width:30%;
@@ -254,6 +255,7 @@ display:block}
     justify-items: center;
     .emailform__element{
       height: 50px;
+      padding:1rem;
       div{
         display:inline-block;
         @include respond-to(handhelds){display: none};
@@ -266,11 +268,14 @@ display:block}
       @include respond-to(handhelds){grid-template-columns: 1fr}
       justify-content: space-between
     }
-    .form__element{align-self: center;justify-self: left;
-      @include respond-to(handhelds){width:100%}}
+    .form__element{ padding:1rem;align-self: center;justify-self: left;
+      @include respond-to(handhelds){}}
     .emailform__submit{grid-column-start: 2;margin:1rem 0;
       @include respond-to(horizon){margin:0}}
   }
+  }
+  select{
+    align-self:left
   }
 
   .hidden {visibility: hidden}

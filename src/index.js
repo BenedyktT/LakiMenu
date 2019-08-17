@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './styles/menu.scss'
 import './styles/cocktail.scss'
+import './styles/success.scss'
 
 
 

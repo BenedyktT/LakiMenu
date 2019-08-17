@@ -44,14 +44,14 @@ target: 'web',
                  outputPath: 'assets/img',
              }
            },
-            {
+             {
              loader:"image-maxsize-webpack-loader",
              options: {
                "max-width":1024,
                "max-height":768,
                "useImageMagick":false
              }
-           } 
+           }  
          ]
        },
       {
@@ -102,17 +102,23 @@ target: 'web',
       chunks: ['index','reserve'],
       
     }),
+    new HtmlWebPackPlugin({
+      template: "./src/success.html",
+      filename: "./success.html",
+      chunks: ['index'],
+      
+    }),
 
     new MiniCssExtractPlugin({
         filename: "[name].css",
         chunkFilename: "[id].css"
       }),
-  
+   
                         new ImageminPlugin({
-        pngquant: {quality: '50-60'},
+        pngquant: {quality: '80-90'},
         plugins: [
-          imageminMozjpeg({progressive:true,quality: 50}),
+          imageminMozjpeg({progressive:true,quality: 70}),
             ]
-      })          
+      })           
   ]
 };
