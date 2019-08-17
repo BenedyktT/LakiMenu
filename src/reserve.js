@@ -35,6 +35,16 @@ submit.addEventListener('click',(e)=>{
     }
 }) 
 
+let hiddenInput = document.querySelector(".hidden-input")
+const selectGuests = document.querySelector(".select-guests")
+const formElement = document.querySelector(".emailform__form")
+
+const inputHandle = ()=>{
+  hiddenInput.value = selectGuests.value
+
+}
+
+formElement.addEventListener("click",inputHandle)
 
 //////////////
 
