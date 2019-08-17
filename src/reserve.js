@@ -11,8 +11,7 @@ let now = ()=>{
 now()
 let error = document.createElement('p')
 const showWarning= ()=>{
-    let form = document.querySelector('.emailform__elements')
-        
+    let form = document.querySelector('.emailform__elements')  
         error.classList.add('errorMsg')
         error.textContent='Restaurant is open 12-22, Last reservation is available til 21.30'
         dateElement.style.border="2px solid red"
@@ -20,7 +19,6 @@ const showWarning= ()=>{
 }
 const submit = document.querySelector('.emailform__submit')
 submit.addEventListener('click',(e)=>{
-    e.preventDefault()
     let inputHour =timeElement.value.split(':')[0]
     let inputMinute = timeElement.value.split(':')[1]
     if(inputHour>=12&&((inputHour<21)||(inputHour<22&&inputMinute<30))){
