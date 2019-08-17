@@ -378,7 +378,7 @@
                 </nav>
     </header>
     <div style="opacity: 1 !important; display: block;min-height: 100%" class="emailform-container subpage"><div class="emailform">
-            <form action="./success.html" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="emailform__form" >
+            <form action="/success.html" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="emailform__form" >
                     <ul class="emailform__elements">
                         <li class="emailform__element">
                             <div class="emailform__title">
@@ -402,18 +402,19 @@
                             <div class="emailform__title guest-number">
                                 <p>Number of Guests:</p>
                             </div>
-                            <select required name="pax[]" class="form__element">
-                                <option name="PAX" value="select" disabled selected>Guests</option>
-                                <option name="PAX" value="1">1</option>
-                                <option name="PAX" value="2">2</option>
-                                <option name="PAX" value="3">3</option>
-                                <option name="PAX" value="4">4</option>
-                                <option name="PAX" value="5">5</option>
-                                <option name="PAX" value="6">6</option>
-                                <option name="PAX" value="7">7</option>
-                                <option name="PAX" value="8">8</option>
-                                <option name="PAX" value="9">9</option>
+                            <select required name="pax[]" class="form__element select-guests">
+                                <option name="" value="select" disabled selected>Guests</option>
+                                <option name="PAX1" value="1">1</option>
+                                <option name="PAX2" value="2">2</option>
+                                <option name="PAX3" value="3">3</option>
+                                <option name="PAX4" value="4">4</option>
+                                <option name="PAX5" value="5">5</option>
+                                <option name="PAX6" value="6">6</option>
+                                <option name="PAX7" value="7">7</option>
+                                <option name="PAX8" value="8">8</option>
+                                <option name="PAX9" value="9">9</option>
                             </select>
+                            <input class="hidden-input" name="pax" type="number">
                         </li>
                         <li class="emailform__element dateEl">
                             <div class="emailform__title">

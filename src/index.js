@@ -6,7 +6,12 @@ import './styles/menu.scss'
 import './styles/cocktail.scss'
 import './styles/success.scss'
 
+window.addEventListener("load",()=>{
+    if(window.location.pathname==="/success"||window.location.pathname==="/success.html"){
+        window.location.assign("/success.html")
 
+    }
+})
 
 //toggle nav
 
