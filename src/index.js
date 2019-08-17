@@ -5,9 +5,8 @@ import 'aos/dist/aos.css';
 import './styles/menu.scss'
 import './styles/cocktail.scss'
 import './styles/success.scss'
-
+let executed= false
 window.addEventListener("load",()=>{
-    let executed= false
     if((window.location.pathname==="/success"||window.location.pathname==="/success.html")&&executed===false){
         window.location.assign("/success.html")
         executed=true
