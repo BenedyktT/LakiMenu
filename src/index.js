@@ -7,9 +7,10 @@ import './styles/cocktail.scss'
 import './styles/success.scss'
 
 window.addEventListener("load",()=>{
-    if(window.location.pathname==="/success"||window.location.pathname==="/success.html"){
+    let executed= false
+    if((window.location.pathname==="/success"||window.location.pathname==="/success.html")&&executed===false){
         window.location.assign("/success.html")
-
+        executed=true
     }
 })
 
