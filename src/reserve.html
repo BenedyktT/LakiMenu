@@ -378,7 +378,7 @@
                 </nav>
     </header>
     <div style="opacity: 1 !important; display: block;min-height: 100%" class="emailform-container subpage"><div class="emailform">
-            <form action="/success" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="emailform__form" >
+            <form action="./success.html" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="emailform__form" >
                     <ul class="emailform__elements">
                         <li class="emailform__element">
                             <div class="emailform__title">
@@ -402,7 +402,7 @@
                             <div class="emailform__title guest-number">
                                 <p>Number of Guests:</p>
                             </div>
-                            <select name="Pax" class="form__element">
+                            <select required name="pax[]" class="form__element">
                                 <option value="select" disabled selected>Guests</option>
                                 <option value="1">1</option>
                                 <option value="1">2</option>
@@ -414,7 +414,6 @@
                                 <option value="1">8</option>
                                 <option value="1">9</option>
                             </select>
-                            <!-- <input min="1" max="9" name="no" type="number" class="form__element numberpax" placeholder=""> -->
                         </li>
                         <li class="emailform__element dateEl">
                             <div class="emailform__title">
