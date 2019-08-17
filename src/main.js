@@ -45,7 +45,7 @@ testimonials.mount()
 const slide = document.querySelectorAll('glide__slide img')
 slide.forEach((e)=>e.style.opacity=0)
 
-const aboutSection = document.querySelector('.about__chef')
+const aboutSection = document.querySelector('main')
 const arrow = document.querySelector('.arrow')
 arrow.addEventListener('click',()=>{
     aboutSection.scrollIntoView({behavior:'smooth'})

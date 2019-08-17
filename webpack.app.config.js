@@ -44,14 +44,14 @@ target: 'web',
                  outputPath: 'assets/img',
              }
            },
-              {
+               {
              loader:"image-maxsize-webpack-loader",
              options: {
                "max-width":1024,
                "max-height":768,
                "useImageMagick":false
              }
-           }   
+           }    
          ]
        },
       {
@@ -114,11 +114,11 @@ target: 'web',
         chunkFilename: "[id].css"
       }),
    
-                         new ImageminPlugin({
+                          new ImageminPlugin({
         pngquant: {quality: '80-90'},
         plugins: [
           imageminMozjpeg({progressive:true,quality: 70}),
             ]
-      })            
+      })             
   ]
 };
