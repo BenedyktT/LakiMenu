@@ -10,13 +10,17 @@ import { Map } from './map';
 document.addEventListener("DOMContentLoaded", function() {
   let mapElement = document.getElementById('map');
   
-  Map.loadGoogleMapsApi().then(function(googleMaps) {
+let createMap = function(){
+  return Map.loadGoogleMapsApi().then(function(googleMaps) {
     Map.createMap(googleMaps, mapElement);
     Map.createMarker(Map.createMap(googleMaps,mapElement))
     
   });
+} 
  
-  
+        
+setTimeout(() => {
+  createMap()
+}, 100);
 });
 
-      
