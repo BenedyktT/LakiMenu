@@ -44,14 +44,14 @@ target: 'web',
                  outputPath: 'assets/img',
              }
            },
-                 {
+                  {
              loader:"image-maxsize-webpack-loader",
              options: {
                "max-width":1024,
                "max-height":768,
                "useImageMagick":false
              }
-           }      
+           }       
          ]
        },
       {
@@ -119,6 +119,6 @@ target: 'web',
         plugins: [
           imageminMozjpeg({progressive:true,quality: 70}),
             ]
-      })               
+      })                
   ]
 };
