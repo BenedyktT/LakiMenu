@@ -94,32 +94,6 @@ for(let i=0;i<imageElement.length;i++){
         )
     })    
 }
- /* imageElement.forEach((e)=>{
-    e.addEventListener('click',()=>{
-        imgItem.src=e.src
-        lightBox.style.display="block";
-        lightBox.style.opacity="1"
-        let currentElement = e.classList[1]
-        const lightboxControls = document.querySelectorAll('.lightbox__controls')
-        lightboxControls.forEach((event)=>{
-            event.addEventListener('click',()=>{
-                if(event.classList.contains('left')){
-                    console.log(currentElement)
-                    console.log(currentElement.split('_')[1])
-                }
-                if(event.classList.contains('right')){
-                }
-            })
-            
-        })
-    })
-}) 
-if(lightBox.style.display==="block"){
-   
-} */
-
-
-
 
 
   
