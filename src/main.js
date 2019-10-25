@@ -96,4 +96,15 @@ for(let i=0;i<imageElement.length;i++){
 }
 
 
-  
+let itemClicked = false
+const wildMenu = document.querySelector(".wild-menu__img")
+wildMenu.addEventListener("click", (e)=>{
+   
+    if(!itemClicked&&window.innerWidth>792){
+        wildMenu.classList.add("enlarge-active") 
+        itemClicked= true
+    } else if(itemClicked&&window.innerWidth>792) {
+        wildMenu.classList.remove("enlarge-active")
+        itemClicked= false
+    } 
+})

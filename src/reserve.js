@@ -45,6 +45,18 @@ const inputHandle = ()=>{
 }
 
 formElement.addEventListener("click",inputHandle)
+const minDate = () => {
+  const day = date.getDate();
+  let monthIndex = date.getMonth() +1;
+  const year = date.getFullYear();
+  if(monthIndex<10){
+    monthIndex = '0' + monthIndex
+  }
+  return `${year}-${monthIndex}-${day}`
+}
+const dateInputElement = document.querySelector('.date-element')
+dateInputElement.setAttribute("min",minDate())
+
 
 //////////////
 
