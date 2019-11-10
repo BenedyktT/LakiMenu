@@ -106,7 +106,7 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: "./src/jolamenu.html",
 			filename: "./jolamenu.html",
-			chunks: ["index", "main", "jolamenu"]
+			chunks: ["index", "jolamenu"]
 		}),
 
 		new MiniCssExtractPlugin({
