@@ -1,0 +1,67 @@
+@import "global";
+.menu-section{
+    min-height: 100%;
+    text-align: center;
+}
+hr{ 
+    overflow: visible; 
+    height: unset;
+    border-style: none;
+    border-color: unset;
+    border-width: 0;
+    border-radius: 0;
+    width: unset
+}
+hr:before { 
+    display: none;
+    
+}
+hr.jola {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(228, 228, 228, 0.75), rgba(0, 0, 0, 0));
+}
+body {
+    
+}
+nav{
+    z-index:1000
+}
+.jolamenu--bg{
+    height: 100vh;
+    width:100vw;
+    background: url("../images/jolamenu/background.png");
+    position:fixed;
+    filter: opacity(0.3);
+    z-index: -1;
+}
+#jolamenu{
+   
+    z-index:1;
+    background-size: contain;
+    height:100vh
+}
+
+.app-container{
+    width:60%;
+    margin:auto;
+    z-index:-1;
+    background: $bg-color;
+    padding:1rem;
+    @include respond-to(handhelds){
+        width:85%
+    }
+}
+.menu-header{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.dish-name{
+    color:$theme-color
+}
+
+
+.menu-header p{
+    line-height: 2rem;
+}
