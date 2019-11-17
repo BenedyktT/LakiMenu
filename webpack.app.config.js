@@ -11,7 +11,8 @@ module.exports = {
 		main: "./src/main.js",
 		about: "./src/about.js",
 		reserve: "./src/reserve.js",
-		jolamenu: "./src/jolamenu.js"
+		jolamenu: "./src/jolamenu.js",
+		gallery: "./src/gallery.js"
 	},
 	output: {
 		filename: "[chunkhash].bundle.js"
@@ -44,15 +45,15 @@ module.exports = {
 							name: "[name].[ext]",
 							outputPath: "assets/img"
 						}
-					},
-					{
+					}
+					/* 		{
 						loader: "image-maxsize-webpack-loader",
 						options: {
 							"max-width": 1024,
 							"max-height": 768,
 							useImageMagick: false
 						}
-					}
+					} */
 				]
 			},
 			{
@@ -76,7 +77,7 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: "./src/index.html",
 			filename: "./index.html",
-			chunks: ["index", "main"]
+			chunks: ["index", "main", "gallery"]
 		}),
 		new HtmlWebPackPlugin({
 			template: "./src/about.html",
