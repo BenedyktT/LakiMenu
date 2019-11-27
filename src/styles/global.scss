@@ -10,7 +10,7 @@ $bg-color: rgb(44, 42, 42);
 
 *{box-sizing: border-box;
 line-height: 1.5rem}
-h1{font-size:2rem}
+h1,h2{font-size:3rem}
 a{text-decoration: none;color:inherit}
 hr {
     overflow: visible; 
@@ -94,7 +94,7 @@ nav {
   position:fixed;
     top:0;
   width:100vw;
-  z-index:100;
+  z-index:1000;
   display:flex;
   justify-content: space-between;
   align-items: center;

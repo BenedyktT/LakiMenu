@@ -1,15 +1,41 @@
 import React from "react";
-import AwesomeSlider from "react-awesome-slider";
-import "react-awesome-slider/dist/styles.css";
-import moduleName from "../images/gallery";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import LazyLoad from "react-lazyload";
 
-export default function Gallery() {
-	const slider = (
-		<AwesomeSlider>
-			{/*     <div data-src="/path/to/image-0.png" />
-    <div data-src="/path/to/image-1.png" />
-    <div data-src="/path/to/image-2.jpg" /> */}
-		</AwesomeSlider>
-	);
-	return <div>hello</div>;
+export default class Gallery extends React.Component {
+	state = {};
+	importAll(r) {
+		return r.keys().map(r);
+	}
+
+	render() {
+		const images = this.importAll(
+			require.context("../images/gallery", false, /\.(png|jpe?g|svg)$/)
+		);
+		const slider = (
+			<LazyLoad height={200} offset={100}>
+				{" "}
+				<Carousel
+					emulateTouch={true}
+					centerMode={false}
+					swipeScrollTolerance={30}
+					useKeyboardArrows={true}
+					dynamicHeight={true}
+				>
+					{images.map((image, index) => (
+						<div key={index}>
+							<img
+								src={image}
+								alt={`restaurant gallery image ${index}`}
+								style={{}}
+							/>
+						</div>
+					))}
+				</Carousel>
+			</LazyLoad>
+		);
+
+		return <div className="gallery-wrapper">{slider}</div>;
+	}
 }
