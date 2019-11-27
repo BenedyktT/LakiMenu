@@ -6,7 +6,7 @@
   font-family: 'Metrophobic';
   font-style: normal;
   font-weight: 400;
-  font-display: auto;
+  font-display: fallback;
   src: url('../fonts/metrophobic-v13-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('Metrophobic Regular'), local('Metrophobic-Regular'),
        url('../fonts/metrophobic-v13-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -18,7 +18,7 @@
 @font-face {
   font-family: 'Sacramento';
   font-style: normal;
-  font-display: auto;
+  font-display: fallback;
   font-weight: 400;
   src: url('../fonts/sacramento-v7-latin-regular.eot'); /* IE9 Compat Modes */
   src: local('Sacramento'), local('Sacramento-Regular'),
@@ -28,8 +28,8 @@
        url('../fonts/sacramento-v7-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
 
 }
-$font-head:  'Sacramento', cursive;
-$font-sub: 'Metrophobic', sans-serif;
+$font-head:  'Sacramento',  Arial, Helvetica, cursive;
+$font-sub: 'Metrophobic', Arial, Helvetica, cursive, sans-serif;
 
 $theme-color: rgb(209, 154, 45);
 $cta-fontsize: 1.5rem;

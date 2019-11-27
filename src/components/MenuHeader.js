@@ -12,6 +12,7 @@ export default function MenuHeader(props) {
 			<p>Jólamatseðil Laugardaginn 7.des</p>
 			<div className="menu-header__language">
 				<button
+					aria-pressed="false"
 					id="is"
 					onClick={onClick}
 					className={classnames(" btn--jola", {
@@ -21,6 +22,7 @@ export default function MenuHeader(props) {
 					Is
 				</button>
 				<button
+					aria-pressed="false"
 					id="en"
 					onClick={onClick}
 					className={classnames(" btn--jola", {
