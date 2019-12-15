@@ -11,7 +11,7 @@ export default class Gallery extends React.Component {
 
 	render() {
 		const images = this.importAll(
-			require.context("../images/gallery", false, /\.(png|jpe?g|svg)$/)
+			require.context("../../images/gallery", false, /\.(png|jpe?g|svg)$/)
 		);
 		const slider = (
 			<LazyLoad height={200} offset={100}>
@@ -36,6 +36,10 @@ export default class Gallery extends React.Component {
 			</LazyLoad>
 		);
 
-		return <div className="gallery-wrapper">{slider}</div>;
+		return (
+			<section className="gallery-wrapper " id="to-gallery">
+				{slider}
+			</section>
+		);
 	}
 }

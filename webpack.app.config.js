@@ -11,9 +11,8 @@ module.exports = {
 		index: "./src/index.js",
 		main: "./src/main.js",
 		about: "./src/about.js",
-		reserve: "./src/reserve.js",
-		jolamenu: "./src/jolamenu.js",
-		gallery: "./src/gallery.js"
+
+		jolamenu: "./src/jolamenu.js"
 	},
 	output: {
 		filename: "[chunkhash].bundle.js"
@@ -83,7 +82,7 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: "./src/index.html",
 			filename: "./index.html",
-			chunks: ["index", "main", "gallery", "app"]
+			chunks: ["index", "main", "app"]
 		}),
 		new HtmlWebPackPlugin({
 			template: "./src/about.html",
@@ -100,11 +99,7 @@ module.exports = {
 			filename: "./cocktails.html",
 			chunks: ["index"]
 		}),
-		new HtmlWebPackPlugin({
-			template: "./src/reserve.html",
-			filename: "./reserve.html",
-			chunks: ["index", "reserve"]
-		}),
+
 		new HtmlWebPackPlugin({
 			template: "./src/success.html",
 			filename: "./success.html",

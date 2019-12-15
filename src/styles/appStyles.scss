@@ -6,7 +6,9 @@
 @import 'toggle-nav';
 
 
-
+a{
+  text-align: center;
+}
 .loader{
   display:flex;
   background: $bg-color;
@@ -38,8 +40,8 @@
   50% {transform: rotate(360deg) scale(0.8)}
   to{transform: rotate(720deg) scale(1)}
 }
-header{
-  height: 100%;
+.header{
+  height: 100vh;
   min-height: 400px;overflow: hidden;
   position: relative;
   .header-bg{
@@ -60,13 +62,13 @@ header{
 main{
   .about{
     margin:6rem 1.5rem;
-    height: 100vh;
+    height: 100%;
     @include respond-to(horizon){height: 100%;width:100%}
     min-height: 400px;
     overflow: hidden;
     display:grid;
     grid-template-columns: 1fr 1fr;
-    grid-row: 1fr;
+   
     grid-gap: 1.5rem;
     width: 60%;
     margin:2rem auto;

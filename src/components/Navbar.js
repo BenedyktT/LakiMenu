@@ -5,7 +5,7 @@ import { ReactComponent as Insta } from "../images/logos/svg/insta.svg";
 import { ReactComponent as Ta } from "../images/logos/svg/ta.svg";
 import Logotype from "../images/logotype.png";
 import Logoname from "../images/logoname.png";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 	const [isHamburgerClicked, toggleHamburgerClicked] = useState(false);
@@ -41,7 +41,9 @@ const Navbar = () => {
 				</li>
 			</ul>
 			<div className="items-right">
-				<button className="cta btn">Reservation</button>
+				<Link to="/reserve" className="cta btn">
+					Reservation
+				</Link>
 				<label className="toggle-nav__label" htmlFor="nav__checkbox">
 					<div
 						className={
@@ -67,13 +69,13 @@ const Navbar = () => {
 			>
 				<ul className="toggle-nav__elements">
 					<li className="toggle-nav__element reservation--index">
-						<a
+						<Link
 							className="nav__reserve"
-							href="./reserve.html"
+							to="/reserve"
 							className="btn btn--nav"
 						>
 							Reserve
-						</a>
+						</Link>
 					</li>
 					<li className="toggle-nav__element about-el">
 						<a href="#to-about">about</a>
