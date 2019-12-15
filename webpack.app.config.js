@@ -7,6 +7,7 @@ const imageminWebp = require("imagemin-webp");
 const Dotenv = require("dotenv-webpack");
 module.exports = {
 	entry: {
+		app: "./src/ReactIndex.js",
 		index: "./src/index.js",
 		main: "./src/main.js",
 		about: "./src/about.js",
@@ -37,6 +38,10 @@ module.exports = {
 				]
 			},
 			{
+				test: /\.svg$/,
+				use: ["@svgr/webpack"]
+			},
+			{
 				test: /\.(png|svg|jpg|gif|jpeg)$/,
 				use: [
 					{
@@ -45,17 +50,18 @@ module.exports = {
 							name: "[name].[ext]",
 							outputPath: "assets/img"
 						}
-					},
-					{
+					}
+					/* {
 						loader: "image-maxsize-webpack-loader",
 						options: {
 							"max-width": 1024,
 							"max-height": 1024,
 							useImageMagick: false
 						}
-					}
+					} */
 				]
 			},
+
 			{
 				test: /\.css$/,
 				use: [MiniCssExtractPlugin.loader, "css-loader"]
@@ -77,7 +83,7 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: "./src/index.html",
 			filename: "./index.html",
-			chunks: ["index", "main", "gallery"]
+			chunks: ["index", "main", "gallery", "app"]
 		}),
 		new HtmlWebPackPlugin({
 			template: "./src/about.html",
@@ -113,11 +119,11 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
 			chunkFilename: "[id].css"
-		}),
+		})
 
-		new ImageminPlugin({
+		/* 		new ImageminPlugin({
 			pngquant: { quality: "80-90" },
 			plugins: [imageminMozjpeg({ progressive: true, quality: 70 })]
-		})
+		}) */
 	]
 };

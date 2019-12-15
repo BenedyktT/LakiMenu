@@ -7,7 +7,37 @@ $theme-color: rgb(209, 154, 45);
 $cta-fontsize: 1.5rem;
 $padding: 1rem;
 $bg-color: rgb(44, 42, 42);
+//reset button
+.reset-button{
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
 
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Remove excess padding and border in Firefox 4+ */
+
+}
 *{box-sizing: border-box;
 line-height: 1.5rem}
 h1,h2{font-size:3rem}

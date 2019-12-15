@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.3.0",
+    "@svgr/webpack": "^4.3.3",
     "aos": "^2.3.4",
     "classnames": "^2.2.6",
     "dotenv": "^8.0.0",
@@ -61,6 +62,7 @@
     "react-dom": "^16.11.0",
     "react-lazyload": "^2.6.5",
     "react-responsive-carousel": "^3.1.51",
+    "react-router-dom": "^5.1.2",
     "webpack-node-externals": "^1.7.2"
   }
 }

@@ -3,7 +3,7 @@ import "../styles/jolamenu.scss";
 import MenuHeader from "./MenuHeader";
 import MenuContent from "./MenuContent";
 
-export default class App extends React.Component {
+export default class Jolamenu extends React.Component {
 	state = {
 		forretir: [
 			{

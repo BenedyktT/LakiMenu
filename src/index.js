@@ -19,21 +19,6 @@ document.querySelector("body").addEventListener("onload", () => {
 	}
 });
 
-//toggle nav
-
-const checkbox = document.querySelector("#nav__checkbox");
-const hamburger = document.querySelector(".hamburger-container");
-
-checkbox.addEventListener("change", () => {
-	hamburger.classList.toggle("active");
-	document.querySelector(".toggle-nav").classList.toggle("toggle-nav__active");
-});
-
-//redirect to homepage on clicking logo
-let brandAnchor = document.querySelector(".brand");
-brandAnchor.addEventListener("click", () => {
-	window.location.assign("/");
-});
 AOS.init({
 	startEvent: "DOMContentLoaded",
 	delay: 300,
@@ -42,7 +27,7 @@ AOS.init({
 
 //anchor to #about closes the nav
 
-const aboutNavLink = document.querySelector(".about-el");
+/* const aboutNavLink = document.querySelector(".about-el");
 const galleryNavLink = document.querySelector(".gallery-el");
 aboutNavLink.addEventListener("click", () => {
 	hamburger.classList.remove("active");
@@ -51,8 +36,8 @@ aboutNavLink.addEventListener("click", () => {
 galleryNavLink.addEventListener("click", () => {
 	hamburger.classList.remove("active");
 	document.querySelector(".toggle-nav").classList.remove("toggle-nav__active");
-});
-const reserveNavEl = document.querySelector(".nav__reserve");
+}); */
+/* const reserveNavEl = document.querySelector(".nav__reserve");
 const navbar = document.querySelector(".nav");
 let last_known_scroll_position = 0;
 let ticking = false;
@@ -132,4 +117,4 @@ cta.forEach(e => {
 		window.location.assign("./reserve.html");
 		console.log("changing location");
 	});
-});
+}); */
