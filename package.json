@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && webpack --mode production --config webpack.app.config.js",
     "start": "webpack-dev-server --mode development --open --config webpack.app.config.js",
-    "server": "rm -rf dist && webpack --mode production --config webpack.server.config.js && webpack --mode production --config webpack.app.config.js"
+    "server": "rm -rf dist && webpack --mode production --config webpack.app.config.js"
   },
   "repository": {
     "type": "git",
