@@ -1,16 +1,11 @@
 import React from "react";
-import { ReactComponent as ArrowLeft } from "../../images/logos/svg/glide-arrow-left.svg";
+/* import { ReactComponent as ArrowLeft } from "../../images/logos/svg/glide-arrow-left.svg";
 import { ReactComponent as ArrowRight } from "../../images/logos/svg/glide-arrow-right.svg";
 import Girl from "../../images/dziewczyna.jpg";
 import Man from "../../images/testimonial.png";
 import Man2 from "../../images/chlop2.jpg";
 import Man3 from "../../images/chlop.jpg";
-import Glide from "@glidejs/glide";
-
-window.addEventListener("load", e => {
-  const loader = document.querySelector(".loader");
-  loader.classList.add("loader__fade");
-});
+import Glide from "@glidejs/glide"; */
 
 const Testimonials = () => {
   return (
