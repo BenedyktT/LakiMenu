@@ -1,4 +1,4 @@
- const dateElement = document.querySelector('.date')
+/*  const dateElement = document.querySelector('.date')
  const timeElement = document.querySelector('.time')
 
 const date = new Date()
