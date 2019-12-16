@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink } from "react-router-hash-link";
 
 const Menu = () => {
   return (
@@ -9,24 +10,24 @@ const Menu = () => {
       <aside className="side-navbar">
         <ul className="side-navbar__items">
           <li className="side-navbar__item">
-            <a href="#starters">
+            <HashLink to="#starters">
               <div>starters</div>
-            </a>
+            </HashLink>
           </li>
           <li className="side-navbar__item">
-            <a href="#main-dishes">
+            <HashLink to="#main-dishes">
               <div>main dishes</div>
-            </a>
+            </HashLink>
           </li>
           <li className="side-navbar__item">
-            <a href="#desserts">
+            <HashLink to="#desserts">
               <div>desserts</div>
-            </a>
+            </HashLink>
           </li>
           <li className="side-navbar__item">
-            <a href="#group-menu">
+            <HashLink to="#group-menu">
               <div>group menu</div>
-            </a>
+            </HashLink>
           </li>
         </ul>
       </aside>

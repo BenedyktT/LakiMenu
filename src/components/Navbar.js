@@ -107,7 +107,9 @@ const Navbar = props => {
               </HashLink>
             </li>
             <li className="toggle-nav__element">
-              <Link to="/location">location</Link>
+              <Link onClick={hideNavOnChange} to="/location">
+                location
+              </Link>
             </li>
             <li className="toggle-nav__element">
               <Link onClick={hideNavOnChange} to="/menu">
