@@ -5,6 +5,7 @@ import Testimonials from "./mainPage/Testimonials";
 import Location from "./mainPage/Location";
 import Menu from "./mainPage/Menu";
 import Gallery from "./mainPage/Gallery";
+import { HashLink } from "react-router-hash-link";
 
 const Home = () => {
   return (
@@ -12,9 +13,9 @@ const Home = () => {
       <header className="header">
         <div className="header-bg"></div>
         <div id="to-about" className="arrow">
-          <a href="#to-about">
+          <HashLink to="/#to-about">
             <Arrow />
-          </a>
+          </HashLink>
         </div>
       </header>
       <main>

@@ -5,11 +5,13 @@ import { ReactComponent as Insta } from "../images/logos/svg/insta.svg";
 import { ReactComponent as Ta } from "../images/logos/svg/ta.svg";
 import Logotype from "../images/logotype.png";
 import Logoname from "../images/logoname.png";
-import { Link } from "react-router-dom";
+import { Link /* , useRouteMatch */ } from "react-router-dom";
 import { useScrollPosition } from "../helper/scrollTrack";
+import { HashLink } from "react-router-hash-link";
 
-const Navbar = () => {
+const Navbar = props => {
   const [isHamburgerClicked, toggleHamburgerClicked] = useState(false);
+
   const [hideOnScroll, setHideOnScroll] = useState(true);
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -18,13 +20,17 @@ const Navbar = () => {
     },
     [hideOnScroll]
   );
+  const hideNavOnChange = () => {
+    toggleHamburgerClicked(!isHamburgerClicked);
+  };
+  /*   const match = useRouteMatch({ path: "/" }).isExact; */
   return (
     <header>
       <nav className={hideOnScroll ? "nav" : "nav nav__scroll"}>
-        <a href="/" className="brand">
+        <Link to="/" className="brand">
           <img className="logotype" src={Logotype} alt="restaurant logo" />
           <img className="logoname" src={Logoname} />
-        </a>
+        </Link>
         <ul className="sociallinks">
           <li>
             <a href="https://www.hotellaki.is/" target="_blank">
@@ -85,30 +91,37 @@ const Navbar = () => {
               <Link
                 className="nav__reserve"
                 to="/reserve"
+                onClick={hideNavOnChange}
                 className="btn btn--nav"
               >
                 Reserve
               </Link>
             </li>
             <li className="toggle-nav__element about-el">
-              <a href="#to-about">about</a>
+              <HashLink
+                to="/#to-about"
+                className="reset-button uppercase"
+                onClick={hideNavOnChange}
+              >
+                ABOUT
+              </HashLink>
             </li>
             <li className="toggle-nav__element">
               <Link to="/location">location</Link>
             </li>
             <li className="toggle-nav__element">
-              <Link to="/menu">menu</Link>
+              <Link onClick={hideNavOnChange} to="/menu">
+                menu
+              </Link>
             </li>
             <li className="toggle-nav__element gallery-el">
-              <button
+              <HashLink
+                to="#to-gallery"
                 className="reset-button uppercase"
-                onClick={() => {
-                  window.location.hash = "to-gallery";
-                  toggleHamburgerClicked(false);
-                }}
+                onClick={hideNavOnChange}
               >
                 GALLERY
-              </button>
+              </HashLink>
             </li>
 
             <ul className="toggle-nav__social-links">
