@@ -10,8 +10,8 @@ module.exports = {
     app: "./src/ReactIndex.js"
   },
   output: {
-    filename: "[chunkhash].bundle.js"
-    /*     publicPath: "/" */
+    filename: "[chunkhash].bundle.js",
+    publicPath: "/"
   },
   devServer: {
     historyApiFallback: true
