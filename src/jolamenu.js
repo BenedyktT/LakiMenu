@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
 import "./styles/jolamenu.scss";
+import Jolamenu from "./components/Jolamenu";
 
-ReactDOM.render(<App />, document.getElementById("jolamenu"));
+ReactDOM.render(<Jolamenu />, document.getElementById("jolamenu"));

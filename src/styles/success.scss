@@ -1,23 +1,24 @@
-@import 'themeColors';
-@import 'global';
+@import "themeColors";
+@import "global";
 
-
-.success-container{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin: 2rem;
-    
-
+.success-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 8rem 2rem;
 }
-.text-element{
-    border: 2px solid $theme-color;
-    padding: 1.6rem;
-    box-shadow: 2px 2px 2px darken($theme-color,100%);
-    background: lighten($bg-color, 5%);
-    margin:1,5rem;
-    text-align: center;
-    .success__btn{width: 50%;margin:2rem auto;min-width: 226px}
+.text-element {
+  border: 2px solid $theme-color;
+  padding: 1.6rem;
+  box-shadow: 2px 2px 2px darken($theme-color, 100%);
+  background: lighten($bg-color, 5%);
+  margin: 1, 5rem;
+  text-align: center;
+  .success__btn {
+    width: 50%;
+    margin: 2rem auto;
+    min-width: 226px;
+  }
 }
