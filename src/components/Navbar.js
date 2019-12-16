@@ -94,10 +94,10 @@ const Navbar = () => {
               <a href="#to-about">about</a>
             </li>
             <li className="toggle-nav__element">
-              <a href="./about.html">location</a>
+              <Link to="/location">location</Link>
             </li>
             <li className="toggle-nav__element">
-              <a href="./menu.html">menu</a>
+              <Link to="/menu">menu</Link>
             </li>
             <li className="toggle-nav__element gallery-el">
               <button
@@ -110,9 +110,7 @@ const Navbar = () => {
                 GALLERY
               </button>
             </li>
-            <li className="toggle-nav__element">
-              <a href="./cocktails.html">cocktails</a>
-            </li>
+
             <ul className="toggle-nav__social-links">
               <li>
                 <a href="https://www.hotellaki.is/" target="_blank">
