@@ -68,6 +68,7 @@ const Reserve = props => {
 							color: "rgb(246,92,120)",
 							font: "inherit",
 							fontSize: "2rem"
+							//comment
 						}}
 					>
 						{error.msg}
