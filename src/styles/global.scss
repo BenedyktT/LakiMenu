@@ -372,6 +372,7 @@ footer {
   height: 100%;
   background: $bg-color;
   width: 50%;
+  padding:1rem;
   margin: 8rem auto;
   @include respond-to(handhelds) {
     width: 100%;
