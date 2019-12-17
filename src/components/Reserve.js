@@ -27,7 +27,7 @@ const Reserve = props => {
 	const { name, time, date } = inputValues;
 	const onSubmit = e => {
 		e.preventDefault();
-		if ((name, time, date)) {
+		if (name && date && time) {
 			const data = {
 				...inputValues,
 				date: format(inputValues.date, "dd-MM-yyyy"),
