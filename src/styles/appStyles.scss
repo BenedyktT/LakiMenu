@@ -371,3 +371,27 @@ z-index:100;
     min-width: 226px;
   }
 }
+
+.btn-modal{
+  border:none;
+  font:inherit;
+  float:right
+}
+.modal-content{
+
+
+}
+
+.modal-bg{
+ max-width: 85vw;
+ max-height: 50vh;
+ @include respond-to(handhelds){
+   height: 100vh;
+   width:100%
+ }
+ img{
+   width:100%;
+   height: 100%;
+
+ }
+}
