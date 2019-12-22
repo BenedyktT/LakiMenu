@@ -1,27 +1,22 @@
-import React, { Component } from "react";
-const Context = React.createContext();
+import React, { createContext, useState } from "react";
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case value:
-      return state;
+export const ModalContext = createContext("green");
 
-    default:
-      return state;
-  }
+export const Provider = ModalContext.Provider;
+export const initialState = {
+	modalIsOpen: true
+};
+export const modalReducer = (state = initialState, action) => {
+	const { type } = action;
+	switch (type) {
+		case "SET_MODAL_OPEN":
+			return { ...state, modalIsOpen: true };
+		case "SET_MODAL_CLOSE":
+			return { ...state, modalIsOpen: false };
+
+		default:
+			return state;
+	}
 };
 
-export class Provider extends Component {
-  state = {
-    dispatch: action => this.setState(state => reducer(state, action))
-  };
-  render() {
-    return (
-      <Context.Provider value={this.state}>
-        {this.props.children}
-      </Context.Provider>
-    );
-  }
-}
-
-export const Consumer = Context.Consumer;
+export const Consumer = ModalContext.Consumer;

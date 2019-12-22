@@ -3,6 +3,7 @@ import React from "react";
 import MapComponent from "./MapComponent";
 
 const Location = () => {
+  
   return (
     <section className="about__subpage" data-aos="zoom-in">
       <article className="article-text">

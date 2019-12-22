@@ -45,15 +45,15 @@ module.exports = {
 							name: "[name].[ext]",
 							outputPath: "assets/img"
 						}
-					}
-					/* 	{
+					},
+					{
 						loader: "image-maxsize-webpack-loader",
 						options: {
 							"max-width": 1024,
 							"max-height": 1024,
 							useImageMagick: false
 						}
-					} */
+					}
 				]
 			},
 			{
@@ -94,11 +94,11 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
 			chunkFilename: "[id].css"
-		})
+		}),
 
-		/* 		new ImageminPlugin({
+		new ImageminPlugin({
 			pngquant: { quality: "80-90" },
 			plugins: [imageminMozjpeg({ progressive: true, quality: 70 })]
-		}) */
+		})
 	]
 };
