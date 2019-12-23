@@ -5,7 +5,7 @@ import { ReactComponent as Insta } from "../images/logos/svg/insta.svg";
 import { ReactComponent as Ta } from "../images/logos/svg/ta.svg";
 import Logotype from "../images/logotype.png";
 import Logoname from "../images/logoname.png";
-import { Link /* , useRouteMatch */ } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useScrollPosition } from "../helper/scrollTrack";
 import { HashLink } from "react-router-hash-link";
 
