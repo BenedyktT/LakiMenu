@@ -7,7 +7,10 @@ netlify cloud form collections for form handle, custom webpack config, that hand
 compressing of images,
 new page elements are react components, design and css is purely original.
 
-npm run start for developing (comment out image resize in package.json to get faster develop experience(
+Current version of website has been rewrite in React 
+Context Api and Hooks is used to state mangament.
+
+npm run start for developing 
 npm run build for production 
 
 website live at:
