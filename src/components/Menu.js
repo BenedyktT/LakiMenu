@@ -56,7 +56,7 @@ const Menu = () => {
 				</ul>
 			</aside>
 			<InView
-				threshold={0.1}
+				threshold={0.15}
 				onChange={(inView, entry) =>
 					inView
 						? setActiveSection({ ...activeSection, starters: true })
@@ -99,7 +99,7 @@ const Menu = () => {
 				</div>
 			</InView>
 			<InView
-				threshold={0.1}
+				threshold={0.15}
 				as="section"
 				onChange={(inView, entry) =>
 					inView
@@ -166,7 +166,7 @@ const Menu = () => {
 				</div>
 			</InView>
 			<InView
-				threshold={0.1}
+				threshold={0.15}
 				as="section"
 				onChange={(inView, entry) =>
 					inView
@@ -215,7 +215,7 @@ const Menu = () => {
 				</div>
 			</InView>
 			<InView
-				threshold={0.1}
+				threshold={0.15}
 				as="section"
 				onChange={(inView, entry) =>
 					inView
