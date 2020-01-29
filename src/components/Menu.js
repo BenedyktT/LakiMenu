@@ -12,10 +12,7 @@ const Menu = () => {
 	});
 	return (
 		<main className="margin-top-8">
-			<div className="menu-headline">
-				<h2>Lunch & Dinner</h2>
-			</div>
-			<aside className="side-navbar">
+			{/* <aside className="side-navbar">
 				<ul className="side-navbar__items">
 					<li
 						className={classnames("side-navbar__item", {
@@ -54,7 +51,7 @@ const Menu = () => {
 						</HashLink>
 					</li>
 				</ul>
-			</aside>
+			</aside> */}
 			<InView
 				threshold={0.15}
 				onChange={(inView, entry) =>
@@ -71,31 +68,27 @@ const Menu = () => {
 						<div className="bg--overlay"></div>
 					</div>
 					<div className="headline__text">
-						<h2>Starters</h2>
+						<h2>Buffet</h2>
 					</div>
 				</div>
 				<div className="menu__list menu--short">
-					<ul className="menu">
-						<li>
-							<p className="menu--item">Cognac based langoustine soup</p>
-							<p className="menu--price">2600kr</p>
-							<hr />
-						</li>
-						<li>
-							<p className="menu--item">Fresh salad</p>
-							<p className="menu--describtion">
-								With roasted cashew nuts and olives.
-							</p>
-							<p className="menu--price">1950kr</p>
-							<hr />
-						</li>
-						<li>
-							<p className="menu--item">Soup of the day</p>
-							<p className="menu--describtion">Ask the waiter</p>
-							<p className="menu--price">1450kr</p>
-							<hr />
-						</li>
-					</ul>
+					<article className="buffet">
+						<p>
+							We are offering a buffet filled by best traditional Icelandic
+							dishes with a modern touch. Important parts of Icelandic cuisine
+							are lamb, dairy, and fish, hence our menu often includes arctic
+							char, cod and lamb shank. We have wide range of vegetarian and
+							gluten free options as well.
+						</p>
+						<ul>
+							<li>Adults – 7500 ISK</li>
+							<li>Children 6-12 years old – 3750 ISK</li>
+							<li>Children &lt; 6 years old – free entrance</li>
+						</ul>
+						<p>
+							The buffet varies day to day – please contact us for more details
+						</p>
+					</article>
 				</div>
 			</InView>
 			<InView
@@ -115,56 +108,26 @@ const Menu = () => {
 					</div>
 					<div className="headline__text">
 						{" "}
-						<h2>Main dishes</h2>
+						<h2>Breakfast</h2>
 					</div>
 				</div>
-				<div className="menu__list">
-					<ul className="menu">
-						<li>
-							<p className="menu--item">Pan fried local charr</p>
-							<p className="menu--describtion">
-								With parsley root purée, fried vegetables and lemongrass sauce.
-							</p>
-							<p className="menu--price">3.600kr</p>
-							<hr />
-						</li>
-						<li>
-							<p className="menu--item">Gígur beef burger</p>
-							<p className="menu--describtion">
-								With onion jam, bacon, and cheese served with french fries and
-								cocktail sauce.
-							</p>
-							<p className="menu--price">3000kr</p>
-							<hr />
-						</li>
-						<li>
-							<p className="menu--item">Slow cooked lamb shank </p>
-							<p className="menu--describtion">
-								With fried root vegetables, baked potato and lamb glaze.
-							</p>
-							<p className="menu--price">3600kr</p>
-							<hr />
-						</li>
-						<li>
-							<p className="menu--item">Chicken breast</p>
-							<p className="menu--describtion">
-								With baked potato, fresh salad, demi glaze and sour cream
-							</p>
-							<p className="menu--price">3000kr</p>
-							<hr />
-						</li>
-						<li>
-							<p className="menu--item">Fried rice noodles</p>
-							<p className="menu--describtion">
-								With soya, egg and vegetables, add chicken or shrimps for ISK
-								600
-							</p>
-							<p className="menu--price">1.900kr / 2.500kr</p>
-							<hr />
-						</li>
-					</ul>
+				<div className="menu__list menu--short">
+					<article className="buffet">
+						<p>
+							Starting your day the right way is essential if you want to enjoy
+							Iceland. In Hotel Laki you can sample fresh pastries, sip from a
+							wide variety of drinks and taste our special dishes. Our breakfast
+							is prepared to charge you up before a day full of amazing
+							experiences.
+						</p>
+						<ul>
+							<li>Adults – 2400 ISK</li>
+						</ul>
+						<p>Breakfast is served between 7 a.m. and 10 a.m.</p>
+					</article>
 				</div>
 			</InView>
+			{/* 
 			<InView
 				threshold={0.15}
 				as="section"
@@ -294,7 +257,7 @@ const Menu = () => {
 						</li>
 					</ul>
 				</div>
-			</InView>
+			</InView> */}
 		</main>
 	);
 };

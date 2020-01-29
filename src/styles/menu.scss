@@ -21,8 +21,6 @@
     position:relative;
     top:0;
     font-size: 1.5rem;
-    
-    
 }
 
 .side-navbar{
@@ -73,21 +71,24 @@ li.active::after{opacity: 1}}
         
         overflow: hidden;
         
-        
         height: 100%;
         width: 100%;
         margin:auto;
         position: absolute;
-        z-index:-1
+        z-index:-1;
+        @include respond-to(handhelds){
+            background-size: cover !important;
+        }
     }
-    .starters__bg{background:url('../images/starter.jpg');background-size:100%;
+ 
+    .starters__bg{background:url('../images/buffet.jpg');background-size:100%;
         background-position: center;background-attachment: fixed;}
-    .main-dishes__bg{background:url('../images/main-dish.jpg');background-size:100%;
+    .main-dishes__bg{background:url('../images/breakfast.jpg');background-size:100%;
         background-position: center;background-attachment: fixed;}
-    .desserts__bg{background:url('../images/dessert.jpg');background-size:100%;
+    /* .desserts__bg{background:url('../images/dessert.jpg');background-size:100%;
         background-position: center;background-attachment: fixed;}
     .group__bg{background:url('../images/group.jpg');background-size:100%;
-        background-position: center;background-attachment: fixed;}
+        background-position: center;background-attachment: fixed;} */
     .headline__text{background:rgba(0, 0, 0, 0.207);width:50%;margin:auto;font-size: 2rem}
 }   
     .menu__list{margin:2rem 0;height: 100%;min-height: 600px;display:flex}
@@ -99,11 +100,23 @@ li.active::after{opacity: 1}}
     .menu--short{min-height: 300px}
 
        
-
-   
     .menu__items{width:100%;display:grid;list-style: none;grid-template-columns: 1fr;text-align: center;justify-content: center;
     grid-auto-rows: minmax(250px,1fr)}
     .group__menu{width:60%;margin:auto;@include respond-to(handhelds){width:100%}}
     .menu__item-content{list-style: none;}
 
-    
+
+
+    //buffet
+    .buffet{
+        display: grid;
+        font-size:1.3rem;
+        width:85%;
+        margin:auto;
+        text-align:center;
+        
+        ul{list-style: none;}
+        *{
+            line-height: 2rem;
+        }
+    }
