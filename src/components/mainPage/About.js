@@ -7,6 +7,7 @@ const About = () => {
 			<div className="about__chef">
 				<h1>Our mission</h1>
 				<p>A little about us</p>
+				<br />
 			</div>
 			<div className="about__art" data-aos="zoom-in">
 				Welcome to Gígur Restaurant. We hope that you will enjoy the food and

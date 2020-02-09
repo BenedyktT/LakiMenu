@@ -55,6 +55,10 @@ a {
 }
 .header {
   height: 100vh;
+  @include respond-to(handhelds){
+    height:100%;
+    margin:10rem 0 
+  }
   min-height: 400px;
   overflow: hidden;
   position: relative;
@@ -70,9 +74,14 @@ a {
       background-position: center;
     }
   }
-  .reservation--index {
-    @include respond-to(handhelds) {
-    }
+  
+}
+.videoTag{
+  height:auto;
+  width:100%;
+  @include respond-to(handhelds){
+    height:100%;
+    width:auto;
   }
 }
 

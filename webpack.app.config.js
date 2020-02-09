@@ -60,6 +60,18 @@ module.exports = {
 				test: /\.svg$/,
 				use: ["@svgr/webpack", "file-loader"]
 			},
+			{
+				test: /\.(mp4)$/,
+				use: [
+					{
+						loader: "file-loader",
+						options: {
+							name: "[name].[ext]",
+							outputPath: "assets/img"
+						}
+					}
+				]
+			},
 
 			{
 				test: /\.css$/,
