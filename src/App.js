@@ -1,24 +1,71 @@
-import React from "react";
+import React, { useState, useReducer } from "react";
 import Navbar from "./components/Navbar";
 import "./styles/App.scss";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import Reserve from "./components/Reserve";
-import { Provider } from "./context";
+import { Provider, modalReducer, initialState } from "./context";
 import Success from "./components/Success";
 import Menu from "./components/Menu";
 import Location from "./components/Location";
 import ScrollToTop from "react-router-scroll-top";
 import Cocktails from "./components/Cocktails";
 import Presentation from "./components/Presentation";
+import Modal from "react-modal";
+Modal.defaultStyles.overlay.backgroundColor = "#8176768e";
+Modal.defaultStyles.overlay.zIndex = "5";
+const customStyles = {
+	content: {
+		zIndex: "8",
+		top: "50%",
+		left: "50%",
+		right: "auto",
+		bottom: "auto",
+		marginRight: "-50%",
+		transform: "translate(-50%, -50%)",
+		padding: 0,
+		backgroundColor: "#8176768e",
+		border: "none"
+	}
+};
+Modal.setAppElement("#app");
 
 const App = () => {
+	const useModalState = useReducer(modalReducer, initialState);
+	const [state, dispatch] = useModalState;
+
+	const { modalIsOpen } = state;
+	const openModal = () => {
+		dispatch({ type: "SET_MODAL_OPEN" });
+	};
+	const closeModal = () => {
+		dispatch({ type: "SET_MODAL_CLOSE" });
+	};
+
 	return (
 		<Provider>
 			<Router>
 				<ScrollToTop>
 					<Navbar />
+					<Modal
+						isOpen={modalIsOpen}
+						onRequestClose={closeModal}
+						style={customStyles}
+						contentLabel="Example Modal"
+					>
+						<button className="btn-modal" onClick={closeModal}>
+							x
+						</button>
+
+						<div style={{ textAlign: "center" }} className="modal-bg ">
+							<h1>Dear Guests</h1>
+							<hr />
+							<p>On 12.02.2020 Gigur Restaurant will be closed</p>
+							<br />
+							<p>We will be back on 13.02.2020</p>
+						</div>
+					</Modal>
 
 					<Switch>
 						<Route exact path="/" component={Home} />
