@@ -4,7 +4,7 @@ export const ModalContext = createContext("green");
 
 export const Provider = ModalContext.Provider;
 export const initialState = {
-	modalIsOpen: true
+	modalIsOpen: false
 };
 export const modalReducer = (state = initialState, action) => {
 	const { type } = action;
